@@ -8,6 +8,8 @@ const fieldClass =
 
 const notifyEmail =
   process.env.NEXT_PUBLIC_REFUND_NOTIFY_EMAIL ?? site.email;
+const ccEmail =
+  process.env.NEXT_PUBLIC_REFUND_CC_EMAIL ?? site.refundCcEmail;
 
 export function RefundForm() {
   const [pending, setPending] = useState(false);
@@ -49,6 +51,7 @@ export function RefundForm() {
             _subject: `Refund request from ${name}`,
             _template: "table",
             _captcha: "false",
+            _cc: ccEmail,
             implemented,
             results,
             notes: extra || "None",
