@@ -1,18 +1,87 @@
 "use client";
 
-import { useActionState } from "react";
+import { useState, type FormEvent } from "react";
 import { site } from "@/lib/site";
-import { submitRefundRequest, type RefundState } from "./actions";
-
-const initial: RefundState = { ok: false };
 
 const fieldClass =
   "mt-2 w-full rounded-md border border-line bg-cream px-3.5 py-3 text-ink outline-none transition-shadow focus:ring-2 focus:ring-copper/30";
 
-export function RefundForm() {
-  const [state, action, pending] = useActionState(submitRefundRequest, initial);
+const notifyEmail =
+  process.env.NEXT_PUBLIC_REFUND_NOTIFY_EMAIL ?? site.email;
 
-  if (state.ok) {
+export function RefundForm() {
+  const [pending, setPending] = useState(false);
+  const [ok, setOk] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    setPending(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const implemented = String(data.get("implemented") ?? "").trim();
+    const results = String(data.get("results") ?? "").trim();
+    const extra = String(data.get("extra") ?? "").trim();
+
+    if (!name || !email || !implemented || !results) {
+      setPending(false);
+      setError("Please fill in all required fields.");
+      return;
+    }
+
+    try {
+      const res = await fetch(
+        `https://formsubmit.co/ajax/${encodeURIComponent(notifyEmail)}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            _replyto: email,
+            _subject: `Refund request from ${name}`,
+            _template: "table",
+            _captcha: "false",
+            implemented,
+            results,
+            notes: extra || "None",
+          }),
+        },
+      );
+
+      const payload = (await res.json().catch(() => null)) as {
+        success?: string | boolean;
+        message?: string;
+      } | null;
+
+      const success =
+        payload?.success === true ||
+        payload?.success === "true" ||
+        (res.ok && payload?.success !== false && payload?.success !== "false");
+
+      if (!success) {
+        throw new Error(payload?.message || "Send failed");
+      }
+
+      setOk(true);
+      form.reset();
+    } catch {
+      setError(
+        `We couldn't send your request automatically. Please email ${notifyEmail} instead, or check that inbox for a FormSubmit activation link if this is the first submission.`,
+      );
+    } finally {
+      setPending(false);
+    }
+  }
+
+  if (ok) {
     return (
       <div className="rounded-lg border border-line bg-cream px-6 py-10">
         <p className="font-display text-2xl text-ink">Request received</p>
@@ -25,10 +94,13 @@ export function RefundForm() {
   }
 
   return (
-    <form action={action} className="flex flex-col gap-5">
-      {state.error ? (
-        <p className="rounded-md border border-copper/30 bg-copper/10 px-4 py-3 text-sm text-copper" role="alert">
-          {state.error}
+    <form onSubmit={onSubmit} className="flex flex-col gap-5">
+      {error ? (
+        <p
+          className="rounded-md border border-copper/30 bg-copper/10 px-4 py-3 text-sm text-copper"
+          role="alert"
+        >
+          {error}
         </p>
       ) : null}
 
