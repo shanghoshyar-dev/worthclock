@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f3efe6;
+  --paper-2: #e8e1d2;
+  --ink: #171512;
+  --ink-soft: #3d3933;
+  --muted: #6b655c;
+  --line: #d6cebd;
+  --forest: #1b332c;
+  --forest-2: #12241f;
+  --copper: #c24e1d;
+  --copper-hover: #a53f16;
+  --cream: #faf7f0;
+  --brass: #b08958;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-forest: var(--forest);
+  --color-forest-2: var(--forest-2);
+  --color-copper: var(--copper);
+  --color-copper-hover: var(--copper-hover);
+  --color-cream: var(--cream);
+  --color-brass: var(--brass);
+  --font-sans: var(--font-geist-sans);
+  --font-display-family: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "clig" 0, "dlig" 0;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--copper) 28%, transparent);
+  color: var(--ink);
+}
+
+.font-display {
+  font-family: var(--font-display), "Iowan Old Style", "Palatino Linotype",
+    Palatino, Georgia, serif;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "clig" 0, "dlig" 0;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hairline {
+  height: 1px;
+  background: var(--line);
+}
+
+details.faq > summary {
+  list-style: none;
+}
+
+details.faq > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.faq[open] .faq-icon {
+  transform: rotate(45deg);
+}
