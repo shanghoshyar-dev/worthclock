@@ -7,12 +7,22 @@ export type BlogPost = {
   slug: string;
   title: string;
   description: string;
+  /** ISO date (YYYY-MM-DD). Use the real publish day going forward. */
   date: string;
   dateLabel: string;
   readingMinutes: number;
 };
 
 export const posts: BlogPost[] = [
+  {
+    slug: "ai-legal-research-how-much-time-are-firms-actually-saving",
+    title: "AI Legal Research: How Much Time Are Firms Actually Saving?",
+    description:
+      "Legal research is one of the biggest time sinks in a law firm. Here's what the real 2026 data shows about how much AI actually saves, and where the accuracy risk still sits.",
+    date: "2026-08-24",
+    dateLabel: "24 August 2026",
+    readingMinutes: 5,
+  },
   {
     slug: "your-law-firm-is-losing-clients-before-they-ever-book-a-call",
     title: "Your Law Firm Is Losing Clients Before They Ever Book a Call",

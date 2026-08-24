@@ -27,6 +27,10 @@ import {
   insuranceFaqs,
 } from "@/components/blog/InsuranceArticle";
 import {
+  LegalResearchArticle,
+  legalResearchFaqs,
+} from "@/components/blog/LegalResearchArticle";
+import {
   LosingClientsArticle,
   losingClientsFaqs,
 } from "@/components/blog/LosingClientsArticle";
@@ -49,6 +53,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "ai-legal-research-how-much-time-are-firms-actually-saving": {
+    faqs: legalResearchFaqs,
+    Content: LegalResearchArticle,
+  },
   "your-law-firm-is-losing-clients-before-they-ever-book-a-call": {
     faqs: losingClientsFaqs,
     Content: LosingClientsArticle,
