@@ -13,7 +13,7 @@ export const site = {
   lastUpdated: "15 August 2026",
   refundResponseDays: 5,
   dataRetentionMonths: 12,
-  calEmbedUrl: process.env.NEXT_PUBLIC_CAL_EMBED_URL ?? "",
+  calLink: "shang-enkmtc/discovery-call",
 } as const;
 
 export const nav = [
