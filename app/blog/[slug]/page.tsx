@@ -27,6 +27,10 @@ import {
   insuranceFaqs,
 } from "@/components/blog/InsuranceArticle";
 import {
+  InvoiceRejectionArticle,
+  invoiceRejectionFaqs,
+} from "@/components/blog/InvoiceRejectionArticle";
+import {
   LegalResearchArticle,
   legalResearchFaqs,
 } from "@/components/blog/LegalResearchArticle";
@@ -53,6 +57,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "why-law-firm-invoices-are-getting-rejected-more-than-ever": {
+    faqs: invoiceRejectionFaqs,
+    Content: InvoiceRejectionArticle,
+  },
   "ai-legal-research-how-much-time-are-firms-actually-saving": {
     faqs: legalResearchFaqs,
     Content: LegalResearchArticle,

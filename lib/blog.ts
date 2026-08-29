@@ -15,6 +15,15 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "why-law-firm-invoices-are-getting-rejected-more-than-ever",
+    title: "Why Law Firm Invoices Are Getting Rejected More Than Ever",
+    description:
+      "Client-side AI billing review is quietly raising invoice rejection rates across the legal industry. Here's what's driving it and how firms are closing the gap.",
+    date: "2026-08-29",
+    dateLabel: "29 August 2026",
+    readingMinutes: 5,
+  },
+  {
     slug: "ai-legal-research-how-much-time-are-firms-actually-saving",
     title: "AI Legal Research: How Much Time Are Firms Actually Saving?",
     description:
