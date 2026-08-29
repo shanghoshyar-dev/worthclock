@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Book Your Assessment",
-  description: `Pick a time for your Worthclock AI Tools Assessment. Payment of ${site.price} is collected when you confirm your slot.`,
+  description: `Pick a time for your WorthClock AI Tools Assessment. Payment of ${site.price} is collected when you confirm your slot.`,
 };
 
 export default function BookPage() {

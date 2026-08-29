@@ -14,7 +14,7 @@ export default function NotFound() {
         href="/"
         className="mt-8 inline-flex rounded-md bg-copper px-6 py-3.5 font-semibold text-cream hover:bg-copper-hover"
       >
-        Back to Worthclock
+        Back to WorthClock
       </Link>
     </div>
   );

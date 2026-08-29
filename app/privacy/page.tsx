@@ -4,12 +4,12 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "How Worthclock collects, uses, and retains your data.",
+  description: "How WorthClock collects, uses, and retains your data.",
 };
 
 export default function PrivacyPage() {
   return (
-    <LegalLayout title="Worthclock Privacy Policy">
+    <LegalLayout title="WorthClock Privacy Policy">
       <LegalDraftNotice />
 
       <LegalSection title="What we collect">
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
 
       <LegalSection title="Contact">
         <p>
-          Worthclock, {site.companyRegistration},{" "}
+          WorthClock, {site.companyRegistration},{" "}
           <a href={`mailto:${site.email}`} className="underline underline-offset-4">
             {site.email}
           </a>

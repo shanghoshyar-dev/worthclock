@@ -1,12 +1,12 @@
 export const site = {
-  name: "Worthclock",
-  entity: "Worthclock: AI Tools Assessment for EU Law Firms",
+  name: "WorthClock",
+  entity: "WorthClock: AI Tools Assessment for EU Law Firms",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://worthclock.com",
   email: "info@worthclock.com",
   refundCcEmail: "shanghoshyar@gmail.com",
   location: "Sweden",
   description:
-    "In one 45-minute call, Worthclock maps your workflows and hands you a clear plan for the AI tools that will save you real hours. Guaranteed 5 hours back every week, or your money back.",
+    "In one 45-minute call, WorthClock maps your workflows and hands you a clear plan for the AI tools that will save you real hours. Guaranteed 5 hours back every week, or your money back.",
   price: "€999",
   priceAmount: 999,
   currency: "EUR",

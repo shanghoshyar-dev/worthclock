@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20">
-      <p className="eyebrow text-brass">Worthclock Blog</p>
+      <p className="eyebrow text-brass">WorthClock Blog</p>
       <h1 className="font-display mt-4 text-4xl leading-tight tracking-tight sm:text-5xl">
         Notes on AI for EU law firms
       </h1>

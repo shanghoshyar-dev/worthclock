@@ -4,7 +4,7 @@ import { RefundForm } from "./RefundForm";
 export const metadata: Metadata = {
   title: "Request a Refund",
   description:
-    "Request a refund under the Worthclock 5-hour guarantee. No login required.",
+    "Request a refund under the WorthClock 5-hour guarantee. No login required.",
   robots: { index: false, follow: false },
 };
 
