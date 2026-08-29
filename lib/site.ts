@@ -5,6 +5,8 @@ export const site = {
   email: "info@worthclock.com",
   refundCcEmail: "shanghoshyar@gmail.com",
   location: "Sweden",
+  description:
+    "In one 45-minute call, Worthclock maps your workflows and hands you a clear plan for the AI tools that will save you real hours. Guaranteed 5 hours back every week, or your money back.",
   price: "€999",
   priceAmount: 999,
   currency: "EUR",

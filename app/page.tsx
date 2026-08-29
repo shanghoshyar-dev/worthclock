@@ -1,11 +1,13 @@
 import { ButtonLink } from "@/components/Button";
 import { Faq } from "@/components/Faq";
 import { HashScroll } from "@/components/HashScroll";
+import { HomeJsonLd } from "@/components/HomeJsonLd";
 import { pricingIncludes, site, steps } from "@/lib/site";
 
 export default function HomePage() {
   return (
     <>
+      <HomeJsonLd />
       <HashScroll />
       <section className="relative overflow-hidden bg-forest text-cream">
         <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:radial-gradient(circle_at_1px_1px,currentColor_1px,transparent_0)] [background-size:22px_22px]" />

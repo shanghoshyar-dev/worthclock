@@ -20,8 +20,7 @@ export const metadata: Metadata = {
     default: `${site.name}: AI Tools Assessment for EU Law Firms`,
     template: `%s | ${site.name}`,
   },
-  description:
-    "In one 45-minute call, Worthclock maps your workflows and hands you a clear plan for the AI tools that will save you real hours. Guaranteed 5 hours back every week, or your money back.",
+  description: site.description,
   openGraph: {
     title: site.entity,
     description:
