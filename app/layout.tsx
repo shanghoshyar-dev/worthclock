@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: site.entity,
     description:
-      "Know exactly which AI tools are worth your time. One assessment, $999, guaranteed.",
+      "Know exactly which AI tools are worth your time. One assessment, €999, guaranteed.",
     url: site.url,
     siteName: site.name,
     locale: "en_US",

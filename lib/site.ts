@@ -5,9 +5,9 @@ export const site = {
   email: "info@worthclock.com",
   refundCcEmail: "shanghoshyar@gmail.com",
   location: "Sweden",
-  price: "$999",
+  price: "€999",
   priceAmount: 999,
-  currency: "USD",
+  currency: "EUR",
   // Fill these before launch
   companyRegistration: "[Company registration number]",
   lastUpdated: "15 August 2026",
@@ -60,7 +60,7 @@ export const faq = [
   },
   {
     q: "When do I pay?",
-    a: "Payment ($999) is collected when you confirm your time slot on the booking page. This secures your spot for the discovery call.",
+    a: "Payment (€999) is collected when you confirm your time slot on the booking page. This secures your spot for the discovery call.",
   },
   {
     q: "How long does the whole process take?",
