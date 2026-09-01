@@ -3,7 +3,15 @@ import { posts } from "@/lib/blog";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["", "/about", "/book", "/blog", "/privacy", "/terms"];
+  const pages = [
+    "",
+    "/about",
+    "/book",
+    "/blog",
+    "/ai-readiness-check",
+    "/privacy",
+    "/terms",
+  ];
   const staticPages = pages.map((path) => ({
     url: `${site.url}${path}`,
     lastModified: new Date(site.lastUpdated),

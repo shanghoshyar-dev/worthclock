@@ -72,6 +72,12 @@ export function Header() {
             />
           ))}
           <Link
+            href="/ai-readiness-check"
+            className="text-sm text-ink-soft transition-colors hover:text-ink"
+          >
+            Mini Audit
+          </Link>
+          <Link
             href="/book"
             className="rounded-md bg-copper px-4 py-2 text-sm font-semibold text-cream transition-colors hover:bg-copper-hover"
           >
@@ -122,6 +128,13 @@ export function Header() {
                 onNavigate={() => setOpen(false)}
               />
             ))}
+            <Link
+              href="/ai-readiness-check"
+              className="py-1 text-ink-soft"
+              onClick={() => setOpen(false)}
+            >
+              Mini Audit
+            </Link>
             <Link
               href="/book"
               className="mt-2 rounded-md bg-copper px-4 py-3 text-center text-sm font-semibold text-cream"
