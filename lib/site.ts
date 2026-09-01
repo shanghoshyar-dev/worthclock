@@ -113,3 +113,21 @@ export const pricingIncludes = [
   "Review call",
   "5-hour guarantee",
 ] as const;
+
+export const discretionExamples = [
+  {
+    label: "Mid-sized litigation firm",
+    outcome:
+      "Contract review time reduced by adopting AI-assisted redlining and clause comparison.",
+  },
+  {
+    label: "Boutique EU firm",
+    outcome:
+      "Client response time cut from tens of minutes to under 5, using an AI-powered intake workflow.",
+  },
+  {
+    label: "Solo practitioner",
+    outcome:
+      "Reclaimed several hours per week previously spent on manual note-taking and case summaries.",
+  },
+] as const;

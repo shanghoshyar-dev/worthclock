@@ -2,7 +2,7 @@ import { ButtonLink } from "@/components/Button";
 import { Faq } from "@/components/Faq";
 import { HashScroll } from "@/components/HashScroll";
 import { HomeJsonLd } from "@/components/HomeJsonLd";
-import { pricingIncludes, site, steps } from "@/lib/site";
+import { discretionExamples, pricingIncludes, site, steps } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -75,6 +75,37 @@ export default function HomePage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="border-b border-line">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+          <p className="eyebrow text-brass">Discretion &amp; results</p>
+          <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight tracking-tight sm:text-4xl">
+            Discretion First
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            Client confidentiality matters to us as much as it matters to you.
+            We operate under strict discretion and don&apos;t disclose which
+            firms we work with or the specifics of their engagements. Below are
+            a few anonymized examples of the kind of impact our assessments are
+            designed to deliver.
+          </p>
+          <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {discretionExamples.map((example) => (
+              <li
+                key={example.label}
+                className="rounded-lg border border-line bg-cream px-6 py-7"
+              >
+                <p className="font-display text-lg tracking-tight text-ink">
+                  {example.label}
+                </p>
+                <p className="mt-3 text-[1.02rem] leading-relaxed text-ink-soft">
+                  {example.outcome}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
