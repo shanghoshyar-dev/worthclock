@@ -73,7 +73,7 @@ export function Header() {
           ))}
           <Link
             href="/ai-readiness-check"
-            className="text-sm text-ink-soft transition-colors hover:text-ink"
+            className="rounded-md border border-copper px-2.5 py-1 text-sm text-ink-soft transition-colors hover:text-ink"
           >
             Mini Audit
           </Link>
@@ -130,7 +130,7 @@ export function Header() {
             ))}
             <Link
               href="/ai-readiness-check"
-              className="py-1 text-ink-soft"
+              className="inline-flex w-fit rounded-md border border-copper px-2.5 py-1 text-ink-soft"
               onClick={() => setOpen(false)}
             >
               Mini Audit
