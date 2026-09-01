@@ -3,6 +3,10 @@ import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { BlogArticleShell } from "@/components/blog/ArticleLayout";
 import {
+  AiDisclosureArticle,
+  aiDisclosureFaqs,
+} from "@/components/blog/AiDisclosureArticle";
+import {
   BillableHoursArticle,
   billableHoursFaqs,
 } from "@/components/blog/BillableHoursArticle";
@@ -57,6 +61,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "should-your-firm-tell-clients-when-youre-using-ai-on-their-matter": {
+    faqs: aiDisclosureFaqs,
+    Content: AiDisclosureArticle,
+  },
   "why-law-firm-invoices-are-getting-rejected-more-than-ever": {
     faqs: invoiceRejectionFaqs,
     Content: InvoiceRejectionArticle,

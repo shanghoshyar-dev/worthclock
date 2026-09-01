@@ -15,6 +15,15 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "should-your-firm-tell-clients-when-youre-using-ai-on-their-matter",
+    title: "Should Your Firm Tell Clients When You're Using AI on Their Matter?",
+    description:
+      "Most clients want to know when a law firm uses AI on their case, and most firms aren't telling them. Here's what the trust gap actually costs, and how to close it.",
+    date: "2026-09-01",
+    dateLabel: "1 September 2026",
+    readingMinutes: 5,
+  },
+  {
     slug: "why-law-firm-invoices-are-getting-rejected-more-than-ever",
     title: "Why Law Firm Invoices Are Getting Rejected More Than Ever",
     description:
