@@ -137,9 +137,16 @@ async function sendLeadNotification({
 
   try {
     const resend = new Resend(apiKey);
-    await resend.emails.send({
+    // Until worthclock.com is verified in Resend, testing mode only delivers
+    // to the Resend account email. Prefer explicit notify env, then founder inbox.
+    const notifyTo =
+      process.env.MINI_AUDIT_NOTIFY_EMAIL ??
+      site.refundCcEmail ??
+      site.email;
+
+    const { error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL ?? "WorthClock <onboarding@resend.dev>",
-      to: [site.email],
+      to: [notifyTo],
       replyTo: email,
       subject: `Mini Audit lead: ${companyName} (${resultCategory})`,
       text: [
@@ -154,6 +161,10 @@ async function sendLeadNotification({
         answerLines,
       ].join("\n"),
     });
+
+    if (error) {
+      console.error("Resend notification failed:", error);
+    }
   } catch (err) {
     // Lead is already stored; don't fail the user flow on email issues
     console.error("Resend notification failed:", err);
