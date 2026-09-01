@@ -169,3 +169,95 @@ export function scoreResult(
 
   return "In Progress";
 }
+
+type AnswerFlag = {
+  id: string;
+  /** Lower number = shown first when capping at 3. */
+  priority: number;
+  match: (answer: string) => boolean;
+  text: string;
+};
+
+const lawFirmFlags: readonly AnswerFlag[] = [
+  {
+    id: "ai_use",
+    priority: 3,
+    match: (a) => a === "No, not yet",
+    text: "No AI tools in use yet",
+  },
+  {
+    id: "policy",
+    priority: 1,
+    match: (a) => a === "No" || a === "Not sure",
+    text: "No clear policy yet on which AI tools are safe to use with client data",
+  },
+  {
+    id: "response_time",
+    priority: 2,
+    match: (a) => a === "A day or more",
+    text: "Client inquiry response time could likely be faster",
+  },
+  {
+    id: "time_spent",
+    priority: 4,
+    match: (a) => a === "More than 15 hours",
+    text: "A significant amount of time going into document review, contract review, or legal research each week",
+  },
+  {
+    id: "concern",
+    priority: 5,
+    match: (a) => a === "Yes",
+    text: "Has already had at least one AI-related concern worth addressing",
+  },
+];
+
+const generalFlags: readonly AnswerFlag[] = [
+  {
+    id: "ai_use",
+    priority: 3,
+    match: (a) => a === "No, not yet",
+    text: "No AI tools in use yet",
+  },
+  {
+    id: "policy",
+    priority: 1,
+    match: (a) => a === "No" || a === "Not sure",
+    text: "No clear policy yet on which AI tools are safe to use with company data",
+  },
+  {
+    id: "response_time",
+    priority: 2,
+    match: (a) => a === "A day or more",
+    text: "Customer inquiry response time could likely be faster",
+  },
+  {
+    id: "time_spent",
+    priority: 4,
+    match: (a) => a === "More than 15 hours",
+    text: "A significant amount of time going into repetitive tasks like data entry, email, or reporting each week",
+  },
+  {
+    id: "concern",
+    priority: 5,
+    match: (a) => a === "Yes",
+    text: "Has already had at least one AI-related concern worth addressing",
+  },
+];
+
+/** Up to 3 answer-driven flags, prioritizing policy and response time. */
+export function getAnswerFlags(
+  version: QuizVersion,
+  answers: Record<string, string>,
+  limit = 3,
+): string[] {
+  const defs = version === "law_firm" ? lawFirmFlags : generalFlags;
+
+  return defs
+    .filter((flag) => {
+      const answer = answers[flag.id];
+      return Boolean(answer && flag.match(answer));
+    })
+    .sort((a, b) => a.priority - b.priority)
+    .slice(0, limit)
+    .map((flag) => flag.text);
+}

@@ -4,6 +4,7 @@ import { useState, useTransition, type FormEvent } from "react";
 import { ButtonLink } from "@/components/Button";
 import {
   branchQuestion,
+  getAnswerFlags,
   questionsFor,
   resultCopy,
   scoreResult,
@@ -28,6 +29,8 @@ export function MiniAuditQuiz() {
 
   const questions = version ? questionsFor(version) : [];
   const current = questions[stepIndex];
+  const resultFlags =
+    phase === "result" && version ? getAnswerFlags(version, answers) : [];
 
   // Progress: branch = 0, then 1–5 questions, email before result
   const progressTotal = totalQuestionSteps + 1; // branch + 5 questions
@@ -207,6 +210,18 @@ export function MiniAuditQuiz() {
             <p className="mt-6 text-lg leading-relaxed text-ink-soft">
               {resultCopy[result].body}
             </p>
+            {resultFlags.length > 0 ? (
+              <div className="mt-8">
+                <p className="text-[1.05rem] leading-relaxed text-ink">
+                  Based on your answers, here&apos;s what stood out:
+                </p>
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-[1.05rem] leading-relaxed text-ink-soft">
+                  {resultFlags.map((flag) => (
+                    <li key={flag}>{flag}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
             <ButtonLink href="/book" className="mt-10">
               Get a full picture with our AI Tools Assessment
             </ButtonLink>
