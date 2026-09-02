@@ -5,6 +5,7 @@ import { ButtonLink } from "@/components/Button";
 import {
   branchQuestion,
   getAnswerFlags,
+  getNextStepPlan,
   questionsFor,
   resultCopy,
   scoreResult,
@@ -31,6 +32,10 @@ export function MiniAuditQuiz() {
   const current = questions[stepIndex];
   const resultFlags =
     phase === "result" && version ? getAnswerFlags(version, answers) : [];
+  const nextSteps =
+    phase === "result" && version && result
+      ? getNextStepPlan(version, result)
+      : [];
 
   // Progress: branch = 0, then 1–5 questions, email before result
   const progressTotal = totalQuestionSteps + 1; // branch + 5 questions
@@ -220,6 +225,32 @@ export function MiniAuditQuiz() {
                     <li key={flag}>{flag}</li>
                   ))}
                 </ul>
+              </div>
+            ) : null}
+            {nextSteps.length > 0 ? (
+              <div className="mt-12">
+                <h2 className="font-display text-2xl tracking-tight sm:text-3xl">
+                  What a typical next step looks like
+                </h2>
+                <p className="mt-4 text-[1.05rem] leading-relaxed text-ink-soft">
+                  Every business is different, but here&apos;s a typical
+                  starting point for businesses in this position:
+                </p>
+                <ol className="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-6">
+                  {nextSteps.map((step) => (
+                    <li key={step.n} className="flex flex-col">
+                      <span className="font-display text-sm text-brass">
+                        {step.n}
+                      </span>
+                      <h3 className="font-display mt-3 text-xl tracking-tight">
+                        {step.title}
+                      </h3>
+                      <p className="mt-3 text-[1.02rem] leading-relaxed text-ink-soft">
+                        {step.body}
+                      </p>
+                    </li>
+                  ))}
+                </ol>
               </div>
             ) : null}
             <ButtonLink href="/book" className="mt-10">

@@ -261,3 +261,126 @@ export function getAnswerFlags(
     .slice(0, limit)
     .map((flag) => flag.text);
 }
+
+export type NextStep = {
+  n: string;
+  title: string;
+  body: string;
+};
+
+const lawFirmNextSteps: Record<ResultCategory, readonly NextStep[]> = {
+  "Early Stage": [
+    {
+      n: "01",
+      title: "Week 1",
+      body: "Identify your 2-3 biggest time drains and match them to safe, proven AI tools",
+    },
+    {
+      n: "02",
+      title: "Week 2",
+      body: "Set up a basic policy for what client data can go into which tools",
+    },
+    {
+      n: "03",
+      title: "Week 3-4",
+      body: "Implement your first tool with your team, measure the time saved",
+    },
+  ],
+  "In Progress": [
+    {
+      n: "01",
+      title: "Week 1",
+      body: "Audit your current tools against confidentiality and GDPR requirements",
+    },
+    {
+      n: "02",
+      title: "Week 2",
+      body: "Identify which workflows still lack any AI support at all",
+    },
+    {
+      n: "03",
+      title: "Week 3-4",
+      body: "Standardize usage across the team so results aren't dependent on who's using what",
+    },
+  ],
+  "Advanced but Exposed": [
+    {
+      n: "01",
+      title: "Week 1",
+      body: "Document a clear AI usage policy covering your current tools",
+    },
+    {
+      n: "02",
+      title: "Week 2",
+      body: "Build in a verification step for anything AI-generated before it reaches a client or filing",
+    },
+    {
+      n: "03",
+      title: "Week 3-4",
+      body: "Review insurance and compliance exposure given your current usage",
+    },
+  ],
+};
+
+const generalNextSteps: Record<ResultCategory, readonly NextStep[]> = {
+  "Early Stage": [
+    {
+      n: "01",
+      title: "Week 1",
+      body: "Identify your 2-3 biggest time drains and match them to safe, proven AI tools",
+    },
+    {
+      n: "02",
+      title: "Week 2",
+      body: "Set up a basic policy for what company data can go into which tools",
+    },
+    {
+      n: "03",
+      title: "Week 3-4",
+      body: "Implement your first tool with your team, measure the time saved",
+    },
+  ],
+  "In Progress": [
+    {
+      n: "01",
+      title: "Week 1",
+      body: "Audit your current tools against data privacy and security requirements",
+    },
+    {
+      n: "02",
+      title: "Week 2",
+      body: "Identify which workflows still lack any AI support at all",
+    },
+    {
+      n: "03",
+      title: "Week 3-4",
+      body: "Standardize usage across the team so results aren't dependent on who's using what",
+    },
+  ],
+  "Advanced but Exposed": [
+    {
+      n: "01",
+      title: "Week 1",
+      body: "Document a clear AI usage policy covering your current tools",
+    },
+    {
+      n: "02",
+      title: "Week 2",
+      body: "Build in a review step for anything AI-generated before it reaches a customer or goes external",
+    },
+    {
+      n: "03",
+      title: "Week 3-4",
+      body: "Review vendor and compliance exposure given your current usage",
+    },
+  ],
+};
+
+export function getNextStepPlan(
+  version: QuizVersion,
+  category: ResultCategory,
+): readonly NextStep[] {
+  return version === "law_firm"
+    ? lawFirmNextSteps[category]
+    : generalNextSteps[category];
+}
