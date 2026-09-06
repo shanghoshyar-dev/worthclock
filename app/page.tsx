@@ -78,38 +78,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="implementation" className="scroll-mt-20">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-          <p className="eyebrow text-brass">Add-on</p>
-          <h2 className="font-display mt-4 max-w-2xl text-2xl leading-tight tracking-tight sm:text-3xl">
-            Implementation Support
-          </h2>
-          <div className="mt-5 max-w-2xl space-y-4 text-[1.05rem] leading-relaxed text-ink-soft">
-            <p>
-              Your report tells you what to adopt. If you&apos;d rather have us
-              set it up directly, we do that too.
-            </p>
-            <p>
-              Already know which tools you want, and just need someone to
-              actually implement them? We handle that as well, no full
-              assessment required if you&apos;ve already done that thinking
-              yourself.
-            </p>
-            <p>
-              Pricing depends on scope, so every implementation is quoted
-              individually after we understand exactly what&apos;s needed,
-              typically discussed on a short call.
-            </p>
-          </div>
-          <a
-            href={`mailto:${site.email}?subject=${encodeURIComponent("Implementation Support inquiry")}`}
-            className="mt-8 inline-flex items-center justify-center rounded-md bg-copper px-5 py-2.5 text-sm font-semibold tracking-tight text-cream transition-colors hover:bg-copper-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
-          >
-            Get in touch about implementation
-          </a>
-        </div>
-      </section>
-
       <section className="border-b border-line border-t border-line">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
           <p className="eyebrow text-brass">Discretion &amp; results</p>
@@ -161,22 +129,58 @@ export default function HomePage() {
           <h2 className="font-display mt-4 text-3xl leading-tight tracking-tight sm:text-4xl">
             One flat price. No subscriptions.
           </h2>
-          <div className="mt-12 max-w-xl rounded-lg border border-line bg-cream p-8 sm:p-10">
-            <p className="font-display text-6xl tracking-tight text-ink sm:text-7xl">
-              {site.price}
-            </p>
-            <p className="mt-2 text-muted">One-time assessment fee</p>
-            <ul className="mt-8 flex flex-col gap-3 border-t border-line pt-8">
-              {pricingIncludes.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-ink-soft">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-copper" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <ButtonLink href="/book" className="mt-10 w-full sm:w-auto">
-              Book Your Assessment
-            </ButtonLink>
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <div className="flex flex-col rounded-lg border border-line bg-cream p-8 sm:p-10">
+              <p className="font-display text-6xl tracking-tight text-ink sm:text-7xl">
+                {site.price}
+              </p>
+              <p className="mt-2 text-muted">One-time assessment fee</p>
+              <ul className="mt-8 flex flex-1 flex-col gap-3 border-t border-line pt-8">
+                {pricingIncludes.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-ink-soft">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-copper" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <ButtonLink href="/book" className="mt-10 w-full sm:w-auto">
+                Book Your Assessment
+              </ButtonLink>
+            </div>
+
+            <div
+              id="implementation"
+              className="flex scroll-mt-20 flex-col rounded-lg border border-line bg-cream p-8 sm:p-10"
+            >
+              <p className="eyebrow text-brass">Add-on</p>
+              <h3 className="font-display mt-3 text-3xl tracking-tight text-ink sm:text-4xl">
+                Implementation Support
+              </h3>
+              <p className="mt-2 text-muted">Quoted individually</p>
+              <div className="mt-8 flex flex-1 flex-col gap-4 border-t border-line pt-8 text-[1.02rem] leading-relaxed text-ink-soft">
+                <p>
+                  Your report tells you what to adopt. If you&apos;d rather have
+                  us set it up directly, we do that too.
+                </p>
+                <p>
+                  Already know which tools you want, and just need someone to
+                  actually implement them? We handle that as well, no full
+                  assessment required if you&apos;ve already done that thinking
+                  yourself.
+                </p>
+                <p>
+                  Pricing depends on scope, so every implementation is quoted
+                  individually after we understand exactly what&apos;s needed,
+                  typically discussed on a short call.
+                </p>
+              </div>
+              <a
+                href={`mailto:${site.email}?subject=${encodeURIComponent("Implementation Support inquiry")}`}
+                className="mt-10 inline-flex w-full items-center justify-center rounded-md bg-copper px-6 py-3.5 text-[0.95rem] font-semibold tracking-tight text-cream transition-colors hover:bg-copper-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper sm:w-auto"
+              >
+                Get in touch about implementation
+              </a>
+            </div>
           </div>
         </div>
       </section>
