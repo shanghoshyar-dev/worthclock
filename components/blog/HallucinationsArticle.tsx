@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { BlogFaq } from "@/lib/blog";
+import { relatedBySlug } from "@/lib/blog";
 import {
   ArticleCta,
   ArticleFaq,
   ArticleSection,
   QuickAnswer,
+  RelatedReading,
+  blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
 export const hallucinationFaqs: BlogFaq[] = [
@@ -48,10 +51,17 @@ export function HallucinationsArticle() {
           embarrassment and sanctions.
         </p>
         <p>
-          Even legal specific research tools aren&apos;t immune. Independent
-          research found meaningful hallucination rates on purpose built legal
-          research platforms, not just general chatbots. That&apos;s a lower
-          rate than consumer tools, but still far from zero.
+          Even{" "}
+          <Link
+            href="/blog/ai-legal-research-how-much-time-are-firms-actually-saving"
+            className={blogInlineLinkClass}
+          >
+            legal specific research tools
+          </Link>{" "}
+          aren&apos;t immune. Independent research found meaningful hallucination
+          rates on purpose built legal research platforms, not just general
+          chatbots. That&apos;s a lower rate than consumer tools, but still far
+          from zero.
         </p>
       </ArticleSection>
 
@@ -59,9 +69,15 @@ export function HallucinationsArticle() {
         <p>
           The pattern is clear: incidents concentrate heavily among solo
           practitioners and small firms, often cases where the firm has no
-          formal review process for AI generated content. Larger firms with
-          structured AI governance see fewer incidents, not because their AI is
-          better, but because their process catches mistakes before filing.
+          formal review process for AI generated content. Larger firms with{" "}
+          <Link
+            href="/blog/does-your-law-firm-have-an-ai-strategy"
+            className={blogInlineLinkClass}
+          >
+            structured AI governance
+          </Link>{" "}
+          see fewer incidents, not because their AI is better, but because their
+          process catches mistakes before filing.
         </p>
         <p>
           This matters directly for smaller EU firms. The tools are accessible
@@ -110,6 +126,8 @@ export function HallucinationsArticle() {
       </ArticleSection>
 
       <ArticleFaq faqs={hallucinationFaqs} />
+
+      <RelatedReading slugs={relatedBySlug["ai-hallucinations-in-legal-filings"]} />
 
       <ArticleCta>
         <p>

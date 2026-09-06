@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { BlogFaq } from "@/lib/blog";
+import { relatedBySlug } from "@/lib/blog";
 import {
   ArticleCta,
   ArticleFaq,
   ArticleSection,
   QuickAnswer,
+  RelatedReading,
+  blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
 export const strategyFaqs: BlogFaq[] = [
@@ -71,8 +74,21 @@ export function StrategyArticle() {
         <p>
           <strong className="font-semibold text-ink">Unmanaged risk.</strong>{" "}
           Without a strategy, there&apos;s usually no consistent policy on what
-          data can go into which tools, which is exactly how confidentiality
-          incidents happen.
+          data can go into which tools, which is exactly how{" "}
+          <Link
+            href="/blog/is-it-safe-to-use-ai-with-privileged-client-information"
+            className={blogInlineLinkClass}
+          >
+            confidentiality incidents
+          </Link>{" "}
+          happen, and the same governance gap that leaves firms more exposed to{" "}
+          <Link
+            href="/blog/law-firms-are-the-perfect-target-for-ai-driven-cyberattacks"
+            className={blogInlineLinkClass}
+          >
+            AI-driven cyberattacks
+          </Link>
+          .
         </p>
         <p>
           <strong className="font-semibold text-ink">
@@ -97,7 +113,13 @@ export function StrategyArticle() {
           </li>
           <li>
             Which tools are approved for use, and which categories of data can
-            never go into them
+            never go into them, guided by{" "}
+            <Link
+              href="/blog/5-questions-to-ask-before-adopting-any-legal-ai-tool"
+              className={blogInlineLinkClass}
+            >
+              the questions worth asking before adopting any tool
+            </Link>
           </li>
           <li>
             Who owns the decision to adopt a new tool, rather than leaving it to
@@ -115,6 +137,10 @@ export function StrategyArticle() {
       </ArticleSection>
 
       <ArticleFaq faqs={strategyFaqs} />
+
+      <RelatedReading
+        slugs={relatedBySlug["does-your-law-firm-have-an-ai-strategy"]}
+      />
 
       <ArticleCta>
         <p>

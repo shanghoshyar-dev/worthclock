@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { BlogFaq } from "@/lib/blog";
+import { relatedBySlug } from "@/lib/blog";
 import {
   ArticleCta,
   ArticleFaq,
   ArticleSection,
   QuickAnswer,
+  RelatedReading,
+  blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
 export const legalResearchFaqs: BlogFaq[] = [
@@ -67,7 +70,15 @@ export function LegalResearchArticle() {
           This is different from tasks like negotiation or courtroom strategy,
           where AI plays a supporting role at best. Research is closer to a pure
           information retrieval and synthesis problem, which is exactly where
-          current AI tools perform strongest.
+          current AI tools perform strongest, similar to the gains firms see
+          from{" "}
+          <Link
+            href="/blog/ai-contract-review-how-much-time-can-it-actually-save"
+            className={blogInlineLinkClass}
+          >
+            AI contract review
+          </Link>
+          .
         </p>
       </ArticleSection>
 
@@ -83,9 +94,15 @@ export function LegalResearchArticle() {
         <p>
           This matters because the same court systems that have benefited from
           faster research have also seen a rapidly growing number of cases
-          involving fabricated or incorrect AI generated citations reaching real
-          filings. The tools that save the most time are not automatically the
-          tools most likely to be right every time.
+          involving{" "}
+          <Link
+            href="/blog/ai-hallucinations-in-legal-filings"
+            className={blogInlineLinkClass}
+          >
+            fabricated or incorrect AI generated citations
+          </Link>{" "}
+          reaching real filings. The tools that save the most time are not
+          automatically the tools most likely to be right every time.
         </p>
       </ArticleSection>
 
@@ -140,6 +157,12 @@ export function LegalResearchArticle() {
       </ArticleSection>
 
       <ArticleFaq faqs={legalResearchFaqs} />
+
+      <RelatedReading
+        slugs={
+          relatedBySlug["ai-legal-research-how-much-time-are-firms-actually-saving"]
+        }
+      />
 
       <ArticleCta>
         <p>

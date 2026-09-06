@@ -75,7 +75,11 @@ export const faq = [
   },
   {
     q: "What happens after the assessment?",
-    a: "Most firms either implement the recommendations themselves using the report, or continue with us for hands-on implementation support (available separately).",
+    a: "Most clients either implement the recommendations themselves using the report, or have us handle implementation directly. Implementation scope and pricing vary by firm, since it depends on which tools, how many, and how much integration is needed, so this is quoted individually and usually discussed on your review call.",
+  },
+  {
+    q: "Can you implement the recommendations for us instead of us doing it ourselves?",
+    a: "Yes. This applies whether you've gone through our assessment or already know exactly which tools you want implemented. Scope and pricing vary by firm, so this is quoted individually based on what's needed.",
   },
   {
     q: "Do you only work with law firms?",

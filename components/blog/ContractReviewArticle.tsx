@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { BlogFaq } from "@/lib/blog";
+import { relatedBySlug } from "@/lib/blog";
 import {
   ArticleCta,
   ArticleFaq,
   ArticleSection,
   QuickAnswer,
+  RelatedReading,
+  blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
 export const contractReviewFaqs: BlogFaq[] = [
@@ -44,7 +47,16 @@ export function ContractReviewArticle() {
           flagging deviations, comparing versions, and negotiating redlines back
           and forth. That combination, repetitive but judgment dependent, is
           exactly the kind of work AI tools have gotten genuinely good at
-          supporting, without replacing the judgment part entirely.
+          supporting, without replacing the judgment part entirely. The same
+          pattern shows up in{" "}
+          <Link
+            href="/blog/ai-legal-research-how-much-time-are-firms-actually-saving"
+            className={blogInlineLinkClass}
+          >
+            AI legal research
+          </Link>
+          , where mechanical searching compresses dramatically while judgment
+          stays with the lawyer.
         </p>
       </ArticleSection>
 
@@ -120,11 +132,22 @@ export function ContractReviewArticle() {
           firm&apos;s caseload. The practical question isn&apos;t just &quot;can
           this save time,&quot; it&apos;s how that saved time gets used,
           reallocated toward higher value client work, or simply absorbed without
-          changing how the firm operates or bills.
+          changing how the firm{" "}
+          <Link
+            href="/blog/why-ai-wont-reduce-your-firms-billable-hours"
+            className={blogInlineLinkClass}
+          >
+            operates or bills
+          </Link>
+          .
         </p>
       </ArticleSection>
 
       <ArticleFaq faqs={contractReviewFaqs} />
+
+      <RelatedReading
+        slugs={relatedBySlug["ai-contract-review-how-much-time-can-it-actually-save"]}
+      />
 
       <ArticleCta>
         <p>

@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { BlogFaq } from "@/lib/blog";
+import { relatedBySlug } from "@/lib/blog";
 import {
   ArticleCta,
   ArticleFaq,
   ArticleSection,
   QuickAnswer,
+  RelatedReading,
+  blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
 export const privilegedFaqs: BlogFaq[] = [
@@ -44,11 +47,26 @@ export function PrivilegedDataArticle() {
           hesitate to adopt AI. It&apos;s a reasonable concern, not resistance
           to technology. Attorneys have a professional obligation to protect
           privileged information, and that obligation doesn&apos;t pause because
-          a tool is convenient.
+          a tool is convenient. The same sensitive data also makes firms{" "}
+          <Link
+            href="/blog/law-firms-are-the-perfect-target-for-ai-driven-cyberattacks"
+            className={blogInlineLinkClass}
+          >
+            attractive targets for AI-driven cyberattacks
+          </Link>
+          , which is why data handling and security controls belong in the same
+          conversation.
         </p>
         <p>
           The mistake most firms make isn&apos;t using AI, it&apos;s using the
-          wrong AI the wrong way.
+          wrong AI the wrong way. That&apos;s why{" "}
+          <Link
+            href="/blog/5-questions-to-ask-before-adopting-any-legal-ai-tool"
+            className={blogInlineLinkClass}
+          >
+            asking the right questions before adopting any tool
+          </Link>{" "}
+          matters as much as adopting one at all.
         </p>
       </ArticleSection>
 
@@ -85,10 +103,16 @@ export function PrivilegedDataArticle() {
             4. Overtrust in AI-generated output.
           </strong>{" "}
           Separate from data exposure, there&apos;s a growing pattern of
-          AI-generated content containing fabricated case citations or details
-          making it into real filings. That&apos;s a different risk (accuracy,
-          not confidentiality), but it stems from the same root cause: treating
-          AI output as final rather than a draft that needs review.
+          AI-generated content containing{" "}
+          <Link
+            href="/blog/ai-hallucinations-in-legal-filings"
+            className={blogInlineLinkClass}
+          >
+            fabricated case citations
+          </Link>{" "}
+          or details making it into real filings. That&apos;s a different risk
+          (accuracy, not confidentiality), but it stems from the same root cause:
+          treating AI output as final rather than a draft that needs review.
         </p>
       </ArticleSection>
 
@@ -122,6 +146,12 @@ export function PrivilegedDataArticle() {
       </ArticleSection>
 
       <ArticleFaq faqs={privilegedFaqs} />
+
+      <RelatedReading
+        slugs={
+          relatedBySlug["is-it-safe-to-use-ai-with-privileged-client-information"]
+        }
+      />
 
       <ArticleCta>
         <p>

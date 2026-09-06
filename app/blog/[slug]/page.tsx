@@ -19,6 +19,10 @@ import {
   contractReviewFaqs,
 } from "@/components/blog/ContractReviewArticle";
 import {
+  CyberattacksArticle,
+  cyberattacksFaqs,
+} from "@/components/blog/CyberattacksArticle";
+import {
   FiveQuestionsArticle,
   fiveQuestionsFaqs,
 } from "@/components/blog/FiveQuestionsArticle";
@@ -61,6 +65,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks": {
+    faqs: cyberattacksFaqs,
+    Content: CyberattacksArticle,
+  },
   "should-your-firm-tell-clients-when-youre-using-ai-on-their-matter": {
     faqs: aiDisclosureFaqs,
     Content: AiDisclosureArticle,

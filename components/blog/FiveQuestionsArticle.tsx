@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { BlogFaq } from "@/lib/blog";
+import { relatedBySlug } from "@/lib/blog";
 import {
   ArticleCta,
   ArticleFaq,
   ArticleSection,
   QuickAnswer,
+  RelatedReading,
+  blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
 export const fiveQuestionsFaqs: BlogFaq[] = [
@@ -74,16 +77,29 @@ export function FiveQuestionsArticle() {
           This goes beyond storage location. Ask whether the vendor has
           experience specifically with legal confidentiality requirements, or
           whether legal is just one of many industries they serve without
-          specific safeguards.
+          specific safeguards. For a deeper look at{" "}
+          <Link
+            href="/blog/is-it-safe-to-use-ai-with-privileged-client-information"
+            className={blogInlineLinkClass}
+          >
+            using AI with privileged client information
+          </Link>
+          , that risk deserves its own checklist.
         </p>
         <p>
           <strong className="font-semibold text-ink">
             4. How accurate is the output, and how is that measured?
           </strong>{" "}
           Ask for real numbers, not just a claim of accuracy. Independent
-          research has found meaningful differences in hallucination rates even
-          among purpose built legal research platforms. A vendor confident in
-          their accuracy should be able to point to some form of validation.
+          research has found meaningful differences in{" "}
+          <Link
+            href="/blog/ai-hallucinations-in-legal-filings"
+            className={blogInlineLinkClass}
+          >
+            hallucination rates
+          </Link>{" "}
+          even among purpose built legal research platforms. A vendor confident
+          in their accuracy should be able to point to some form of validation.
         </p>
         <p>
           <strong className="font-semibold text-ink">
@@ -108,6 +124,12 @@ export function FiveQuestionsArticle() {
       </ArticleSection>
 
       <ArticleFaq faqs={fiveQuestionsFaqs} />
+
+      <RelatedReading
+        slugs={
+          relatedBySlug["5-questions-to-ask-before-adopting-any-legal-ai-tool"]
+        }
+      />
 
       <ArticleCta>
         <p>

@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { BlogFaq } from "@/lib/blog";
+import { relatedBySlug } from "@/lib/blog";
 import {
   ArticleCta,
   ArticleFaq,
   ArticleSection,
   QuickAnswer,
+  RelatedReading,
+  blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
 export const losingClientsFaqs: BlogFaq[] = [
@@ -50,7 +53,14 @@ export function LosingClientsArticle() {
         <p>
           This is a different kind of loss than losing a case or losing to a
           stronger competitor. It&apos;s losing a client the firm never even had
-          a chance to meet.
+          a chance to meet, a pattern that sits alongside{" "}
+          <Link
+            href="/blog/how-clients-are-already-using-ai-instead-of-calling-your-firm"
+            className={blogInlineLinkClass}
+          >
+            clients answering their own questions with AI
+          </Link>{" "}
+          before they ever reach out.
         </p>
       </ArticleSection>
 
@@ -128,6 +138,14 @@ export function LosingClientsArticle() {
       </ArticleSection>
 
       <ArticleFaq faqs={losingClientsFaqs} />
+
+      <RelatedReading
+        slugs={
+          relatedBySlug[
+            "your-law-firm-is-losing-clients-before-they-ever-book-a-call"
+          ]
+        }
+      />
 
       <ArticleCta>
         <p>

@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { BlogFaq } from "@/lib/blog";
+import { relatedBySlug } from "@/lib/blog";
 import {
   ArticleCta,
   ArticleFaq,
   ArticleSection,
   QuickAnswer,
+  RelatedReading,
+  blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
 export const aiDisclosureFaqs: BlogFaq[] = [
@@ -65,8 +68,14 @@ export function AiDisclosureArticle() {
           The most consistent finding across recent industry research isn&apos;t
           that clients reject AI outright, it&apos;s that they want to know
           where it&apos;s being used, how it&apos;s managed, and where human
-          judgment stays central. Clients are asking for clarity and confidence,
-          not reinvention.
+          judgment stays central, including how the firm handles{" "}
+          <Link
+            href="/blog/is-it-safe-to-use-ai-with-privileged-client-information"
+            className={blogInlineLinkClass}
+          >
+            privileged client information
+          </Link>
+          . Clients are asking for clarity and confidence, not reinvention.
         </p>
         <p>
           <strong className="font-semibold text-ink">
@@ -122,16 +131,31 @@ export function AiDisclosureArticle() {
       <ArticleSection title="What This Means for Smaller Firms">
         <p>
           This trend has largely been discussed in the context of large firms
-          and formal governance programs, but the underlying client expectation
-          doesn&apos;t scale down. A client at a two person firm wants the same
-          clarity as a client at a 200 person firm, arguably more, since smaller
-          firms often have less formal process to point to when asked. A simple,
-          honest disclosure practice is one of the lowest cost, highest trust
-          building moves available to any size firm.
+          and formal{" "}
+          <Link
+            href="/blog/does-your-law-firm-have-an-ai-strategy"
+            className={blogInlineLinkClass}
+          >
+            governance programs
+          </Link>
+          , but the underlying client expectation doesn&apos;t scale down. A
+          client at a two person firm wants the same clarity as a client at a
+          200 person firm, arguably more, since smaller firms often have less
+          formal process to point to when asked. A simple, honest disclosure
+          practice is one of the lowest cost, highest trust building moves
+          available to any size firm.
         </p>
       </ArticleSection>
 
       <ArticleFaq faqs={aiDisclosureFaqs} />
+
+      <RelatedReading
+        slugs={
+          relatedBySlug[
+            "should-your-firm-tell-clients-when-youre-using-ai-on-their-matter"
+          ]
+        }
+      />
 
       <ArticleCta>
         <p>

@@ -78,7 +78,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="border-b border-line">
+      <section id="implementation" className="scroll-mt-20">
+        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+          <p className="eyebrow text-brass">Add-on</p>
+          <h2 className="font-display mt-4 max-w-2xl text-2xl leading-tight tracking-tight sm:text-3xl">
+            Implementation Support
+          </h2>
+          <div className="mt-5 max-w-2xl space-y-4 text-[1.05rem] leading-relaxed text-ink-soft">
+            <p>
+              Your report tells you what to adopt. If you&apos;d rather have us
+              set it up directly, we do that too.
+            </p>
+            <p>
+              Already know which tools you want, and just need someone to
+              actually implement them? We handle that as well, no full
+              assessment required if you&apos;ve already done that thinking
+              yourself.
+            </p>
+            <p>
+              Pricing depends on scope, so every implementation is quoted
+              individually after we understand exactly what&apos;s needed,
+              typically discussed on a short call.
+            </p>
+          </div>
+          <a
+            href={`mailto:${site.email}?subject=${encodeURIComponent("Implementation Support inquiry")}`}
+            className="mt-8 inline-flex items-center justify-center rounded-md bg-copper px-5 py-2.5 text-sm font-semibold tracking-tight text-cream transition-colors hover:bg-copper-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
+          >
+            Get in touch about implementation
+          </a>
+        </div>
+      </section>
+
+      <section className="border-b border-line border-t border-line">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
           <p className="eyebrow text-brass">Discretion &amp; results</p>
           <h2 className="font-display mt-4 max-w-2xl text-3xl leading-tight tracking-tight sm:text-4xl">

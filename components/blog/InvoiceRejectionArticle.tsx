@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { BlogFaq } from "@/lib/blog";
+import { relatedBySlug } from "@/lib/blog";
 import {
   ArticleCta,
   ArticleFaq,
   ArticleSection,
   QuickAnswer,
+  RelatedReading,
+  blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
 export const invoiceRejectionFaqs: BlogFaq[] = [
@@ -89,7 +92,15 @@ export function InvoiceRejectionArticle() {
           disrupted cash flow forecasting, and slower overall payment cycles.
           Some firms report losing a meaningful share of profits to billing
           mistakes and disputes before ever accounting for the administrative
-          time spent fixing them after the fact.
+          time spent fixing them after the fact. That pressure sits on top of
+          questions about how AI is reshaping{" "}
+          <Link
+            href="/blog/why-ai-wont-reduce-your-firms-billable-hours"
+            className={blogInlineLinkClass}
+          >
+            billable hours
+          </Link>{" "}
+          in the first place.
         </p>
       </ArticleSection>
 
@@ -128,16 +139,29 @@ export function InvoiceRejectionArticle() {
       <ArticleSection title="What This Means for Smaller Firms">
         <p>
           This trend has mostly been discussed in the context of large corporate
-          clients and Am Law scale firms, but the underlying shift, clients using
-          automated tools to review bills, applies just as much to smaller firms
-          with corporate or institutional clients. A smaller firm without its own
-          billing review process is just as exposed to rejected invoices and
-          slower payment as a larger one, often with less staff capacity to
-          absorb the extra rework.
+          clients and Am Law scale firms, but the underlying shift,{" "}
+          <Link
+            href="/blog/how-clients-are-already-using-ai-instead-of-calling-your-firm"
+            className={blogInlineLinkClass}
+          >
+            clients using automated tools
+          </Link>{" "}
+          to review bills, applies just as much to smaller firms with corporate
+          or institutional clients. A smaller firm without its own billing review
+          process is just as exposed to rejected invoices and slower payment as a
+          larger one, often with less staff capacity to absorb the extra rework.
         </p>
       </ArticleSection>
 
       <ArticleFaq faqs={invoiceRejectionFaqs} />
+
+      <RelatedReading
+        slugs={
+          relatedBySlug[
+            "why-law-firm-invoices-are-getting-rejected-more-than-ever"
+          ]
+        }
+      />
 
       <ArticleCta>
         <p>

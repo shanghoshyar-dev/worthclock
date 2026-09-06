@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { BlogFaq } from "@/lib/blog";
+import { relatedBySlug } from "@/lib/blog";
 import {
   ArticleCta,
   ArticleFaq,
   ArticleSection,
   QuickAnswer,
+  RelatedReading,
+  blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
 export const insuranceFaqs: BlogFaq[] = [
@@ -48,9 +51,22 @@ export function InsuranceArticle() {
         <p>
           The reason is straightforward from an insurer&apos;s perspective. AI
           introduces new categories of risk, like fabricated citations reaching a
-          filing or a confidentiality breach through a poorly vetted tool, and
-          insurers want to know whether a firm has controls in place before they
-          price that risk.
+          filing or a{" "}
+          <Link
+            href="/blog/is-it-safe-to-use-ai-with-privileged-client-information"
+            className={blogInlineLinkClass}
+          >
+            confidentiality breach through a poorly vetted tool
+          </Link>
+          , alongside rising{" "}
+          <Link
+            href="/blog/law-firms-are-the-perfect-target-for-ai-driven-cyberattacks"
+            className={blogInlineLinkClass}
+          >
+            AI-generated phishing and social engineering
+          </Link>
+          , and insurers want to know whether a firm has controls in place before
+          they price that risk.
         </p>
       </ArticleSection>
 
@@ -66,7 +82,15 @@ export function InsuranceArticle() {
         </p>
         <ul className="list-disc space-y-3 pl-5">
           <li>
-            Documented governance practices, not just informal habits
+            Documented governance practices, not just informal habits, which
+            usually means having a real{" "}
+            <Link
+              href="/blog/does-your-law-firm-have-an-ai-strategy"
+              className={blogInlineLinkClass}
+            >
+              AI strategy
+            </Link>{" "}
+            rather than ad hoc tool use
           </li>
           <li>A completed AI risk assessment for the firm</li>
           <li>
@@ -115,6 +139,12 @@ export function InsuranceArticle() {
       </ArticleSection>
 
       <ArticleFaq faqs={insuranceFaqs} />
+
+      <RelatedReading
+        slugs={
+          relatedBySlug["will-ai-insurance-underwriters-ask-about-your-firms-ai-use"]
+        }
+      />
 
       <ArticleCta>
         <p>

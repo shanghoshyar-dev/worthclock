@@ -1,8 +1,11 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ButtonLink } from "@/components/Button";
-import type { BlogFaq, BlogPost } from "@/lib/blog";
+import { getPost, type BlogFaq, type BlogPost } from "@/lib/blog";
 import { site } from "@/lib/site";
+
+export const blogInlineLinkClass =
+  "underline underline-offset-4 hover:text-ink";
 
 export function BlogArticleShell({
   post,
@@ -116,6 +119,32 @@ export function ArticleFaq({ faqs }: { faqs: readonly BlogFaq[] }) {
           </div>
         ))}
       </div>
+    </section>
+  );
+}
+
+export function RelatedReading({ slugs }: { slugs: readonly string[] }) {
+  const related = slugs
+    .map((slug) => getPost(slug))
+    .filter((post): post is BlogPost => Boolean(post));
+
+  if (related.length === 0) return null;
+
+  return (
+    <section className="mt-14">
+      <h2 className="font-display text-3xl tracking-tight">Related reading</h2>
+      <ul className="mt-5 space-y-3 text-[1.05rem] leading-relaxed text-ink-soft">
+        {related.map((post) => (
+          <li key={post.slug}>
+            <Link
+              href={`/blog/${post.slug}`}
+              className={blogInlineLinkClass}
+            >
+              {post.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

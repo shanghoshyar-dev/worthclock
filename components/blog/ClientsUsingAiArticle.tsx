@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { BlogFaq } from "@/lib/blog";
+import { relatedBySlug } from "@/lib/blog";
 import {
   ArticleCta,
   ArticleFaq,
   ArticleSection,
   QuickAnswer,
+  RelatedReading,
+  blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
 export const clientsUsingAiFaqs: BlogFaq[] = [
@@ -47,8 +50,14 @@ export function ClientsUsingAiArticle() {
         </p>
         <p>
           This is a meaningfully different problem than typical competition.
-          It&apos;s not a rival firm taking a client. It&apos;s a client never
-          becoming a lead in the first place.
+          It&apos;s not a rival firm taking a client. It&apos;s a client{" "}
+          <Link
+            href="/blog/your-law-firm-is-losing-clients-before-they-ever-book-a-call"
+            className={blogInlineLinkClass}
+          >
+            never becoming a lead in the first place
+          </Link>
+          .
         </p>
       </ArticleSection>
 
@@ -123,10 +132,28 @@ export function ClientsUsingAiArticle() {
             can&apos;t replace, rather than competing on basic informational
             questions AI already answers well
           </li>
+          <li>
+            Be clear with clients about{" "}
+            <Link
+              href="/blog/should-your-firm-tell-clients-when-youre-using-ai-on-their-matter"
+              className={blogInlineLinkClass}
+            >
+              when your firm uses AI on their matter
+            </Link>
+            , since transparency builds trust as client AI habits shift
+          </li>
         </ul>
       </ArticleSection>
 
       <ArticleFaq faqs={clientsUsingAiFaqs} />
+
+      <RelatedReading
+        slugs={
+          relatedBySlug[
+            "how-clients-are-already-using-ai-instead-of-calling-your-firm"
+          ]
+        }
+      />
 
       <ArticleCta>
         <p>

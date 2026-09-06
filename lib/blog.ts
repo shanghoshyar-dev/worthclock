@@ -15,6 +15,16 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks",
+    title:
+      "Law Firms Are the Perfect Target for AI-Driven Cyberattacks. Most Don't Know It Yet.",
+    description:
+      "AI-generated phishing and social engineering attacks against law firms are rising fast. Here's what's driving it, and why most firms are less prepared than they think.",
+    date: "2026-09-06",
+    dateLabel: "6 September 2026",
+    readingMinutes: 6,
+  },
+  {
     slug: "should-your-firm-tell-clients-when-youre-using-ai-on-their-matter",
     title: "Should Your Firm Tell Clients When You're Using AI on Their Matter?",
     description:
@@ -128,3 +138,72 @@ export const posts: BlogPost[] = [
 export function getPost(slug: string) {
   return posts.find((post) => post.slug === slug);
 }
+
+/** Related posts for end-of-article reading lists (by current slug). */
+export const relatedBySlug: Record<string, readonly string[]> = {
+  "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks": [
+    "does-your-law-firm-have-an-ai-strategy",
+    "will-ai-insurance-underwriters-ask-about-your-firms-ai-use",
+    "is-it-safe-to-use-ai-with-privileged-client-information",
+  ],
+  "should-your-firm-tell-clients-when-youre-using-ai-on-their-matter": [
+    "is-it-safe-to-use-ai-with-privileged-client-information",
+    "will-ai-insurance-underwriters-ask-about-your-firms-ai-use",
+    "does-your-law-firm-have-an-ai-strategy",
+  ],
+  "why-law-firm-invoices-are-getting-rejected-more-than-ever": [
+    "why-ai-wont-reduce-your-firms-billable-hours",
+    "how-clients-are-already-using-ai-instead-of-calling-your-firm",
+    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
+  ],
+  "ai-legal-research-how-much-time-are-firms-actually-saving": [
+    "ai-hallucinations-in-legal-filings",
+    "ai-contract-review-how-much-time-can-it-actually-save",
+    "why-ai-wont-reduce-your-firms-billable-hours",
+  ],
+  "your-law-firm-is-losing-clients-before-they-ever-book-a-call": [
+    "how-clients-are-already-using-ai-instead-of-calling-your-firm",
+    "should-your-firm-tell-clients-when-youre-using-ai-on-their-matter",
+    "does-your-law-firm-have-an-ai-strategy",
+  ],
+  "ai-contract-review-how-much-time-can-it-actually-save": [
+    "ai-legal-research-how-much-time-are-firms-actually-saving",
+    "why-ai-wont-reduce-your-firms-billable-hours",
+    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
+  ],
+  "how-clients-are-already-using-ai-instead-of-calling-your-firm": [
+    "your-law-firm-is-losing-clients-before-they-ever-book-a-call",
+    "should-your-firm-tell-clients-when-youre-using-ai-on-their-matter",
+    "why-ai-wont-reduce-your-firms-billable-hours",
+  ],
+  "will-ai-insurance-underwriters-ask-about-your-firms-ai-use": [
+    "does-your-law-firm-have-an-ai-strategy",
+    "is-it-safe-to-use-ai-with-privileged-client-information",
+    "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks",
+  ],
+  "why-ai-wont-reduce-your-firms-billable-hours": [
+    "ai-legal-research-how-much-time-are-firms-actually-saving",
+    "ai-contract-review-how-much-time-can-it-actually-save",
+    "why-law-firm-invoices-are-getting-rejected-more-than-ever",
+  ],
+  "5-questions-to-ask-before-adopting-any-legal-ai-tool": [
+    "is-it-safe-to-use-ai-with-privileged-client-information",
+    "ai-hallucinations-in-legal-filings",
+    "will-ai-insurance-underwriters-ask-about-your-firms-ai-use",
+  ],
+  "is-it-safe-to-use-ai-with-privileged-client-information": [
+    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
+    "ai-hallucinations-in-legal-filings",
+    "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks",
+  ],
+  "does-your-law-firm-have-an-ai-strategy": [
+    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
+    "is-it-safe-to-use-ai-with-privileged-client-information",
+    "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks",
+  ],
+  "ai-hallucinations-in-legal-filings": [
+    "ai-legal-research-how-much-time-are-firms-actually-saving",
+    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
+    "does-your-law-firm-have-an-ai-strategy",
+  ],
+};

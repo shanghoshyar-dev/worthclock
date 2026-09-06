@@ -1,10 +1,13 @@
 import Link from "next/link";
 import type { BlogFaq } from "@/lib/blog";
+import { relatedBySlug } from "@/lib/blog";
 import {
   ArticleCta,
   ArticleFaq,
   ArticleSection,
   QuickAnswer,
+  RelatedReading,
+  blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
 export const billableHoursFaqs: BlogFaq[] = [
@@ -31,18 +34,32 @@ export function BillableHoursArticle() {
           Similar shifts in other professions, like online symptom checkers not
           reducing demand for doctors, suggest the same pattern will hold in
           law. What actually changes is the type of work those hours go toward:
-          less time on routine drafting and research, more time on judgment,
-          strategy, and higher value work. Firms that plan around that shift
-          come out ahead. Firms that don&apos;t risk compressing their margins
-          while doing the same work faster for the same price.
+          less time on routine drafting and{" "}
+          <Link
+            href="/blog/ai-legal-research-how-much-time-are-firms-actually-saving"
+            className={blogInlineLinkClass}
+          >
+            research
+          </Link>
+          , more time on judgment, strategy, and higher value work. Firms that
+          plan around that shift come out ahead. Firms that don&apos;t risk
+          compressing their margins while doing the same work faster for the same
+          price.
         </p>
       </QuickAnswer>
 
       <ArticleSection title="The Fear Versus the Likely Reality">
         <p>
           The common worry is straightforward: if AI can draft a document or
-          summarize a case in minutes instead of hours, won&apos;t firms simply
-          need fewer billable hours, and therefore make less money?
+          summarize a case in minutes instead of hours, including work like{" "}
+          <Link
+            href="/blog/ai-contract-review-how-much-time-can-it-actually-save"
+            className={blogInlineLinkClass}
+          >
+            contract review
+          </Link>
+          , won&apos;t firms simply need fewer billable hours, and therefore make
+          less money?
         </p>
         <p>
           The more likely outcome, based on how similar shifts have played out
@@ -121,6 +138,10 @@ export function BillableHoursArticle() {
       </ArticleSection>
 
       <ArticleFaq faqs={billableHoursFaqs} />
+
+      <RelatedReading
+        slugs={relatedBySlug["why-ai-wont-reduce-your-firms-billable-hours"]}
+      />
 
       <ArticleCta>
         <p>
