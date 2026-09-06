@@ -23,12 +23,14 @@ export const metadata: Metadata = {
   description: site.description,
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "48x48" },
       { url: "/icon.png", type: "image/png", sizes: "48x48" },
       { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
     ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
+  // Stable public favicons only — Google prefers non-fingerprinted URLs
+  // Request homepage reindex in Search Console after deploy.
   openGraph: {
     title: site.entity,
     description:
