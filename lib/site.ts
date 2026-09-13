@@ -3,6 +3,8 @@ export const site = {
   entity: "WorthClock: AI Tools Assessment for EU Law Firms",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://worthclock.com",
   email: "info@worthclock.com",
+  phone: "+46731474731",
+  phoneDisplay: "+46 731 474 731",
   refundCcEmail: "shanghoshyar@gmail.com",
   location: "Sweden",
   description:
@@ -11,7 +13,6 @@ export const site = {
   priceAmount: 999,
   currency: "EUR",
   // Fill these before launch
-  companyRegistration: "[Company registration number]",
   lastUpdated: "15 August 2026",
   refundResponseDays: 5,
   dataRetentionMonths: 12,

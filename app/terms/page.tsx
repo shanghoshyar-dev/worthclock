@@ -87,6 +87,10 @@ export default function TermsPage() {
           <a href={`mailto:${site.email}`} className="underline underline-offset-4">
             {site.email}
           </a>
+          ,{" "}
+          <a href={`tel:${site.phone}`} className="underline underline-offset-4">
+            {site.phoneDisplay}
+          </a>
         </p>
       </LegalSection>
     </LegalLayout>
