@@ -7,6 +7,10 @@ import {
   aiDisclosureFaqs,
 } from "@/components/blog/AiDisclosureArticle";
 import {
+  AiTrainingArticle,
+  aiTrainingFaqs,
+} from "@/components/blog/AiTrainingArticle";
+import {
   BillableHoursArticle,
   billableHoursFaqs,
 } from "@/components/blog/BillableHoursArticle";
@@ -65,6 +69,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "your-lawyers-are-already-using-ai-almost-nobody-trained-them": {
+    faqs: aiTrainingFaqs,
+    Content: AiTrainingArticle,
+  },
   "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks": {
     faqs: cyberattacksFaqs,
     Content: CyberattacksArticle,

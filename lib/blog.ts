@@ -15,6 +15,15 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "your-lawyers-are-already-using-ai-almost-nobody-trained-them",
+    title: "Your Lawyers Are Already Using AI. Almost Nobody Trained Them.",
+    description:
+      "AI use among lawyers has more than doubled in a year, but most firms still provide no training on how to use it responsibly. Here's why that gap is the real risk.",
+    date: "2026-09-13",
+    dateLabel: "13 September 2026",
+    readingMinutes: 5,
+  },
+  {
     slug: "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks",
     title:
       "Law Firms Are the Perfect Target for AI-Driven Cyberattacks. Most Don't Know It Yet.",
@@ -141,6 +150,11 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
+  "your-lawyers-are-already-using-ai-almost-nobody-trained-them": [
+    "does-your-law-firm-have-an-ai-strategy",
+    "ai-hallucinations-in-legal-filings",
+    "is-it-safe-to-use-ai-with-privileged-client-information",
+  ],
   "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks": [
     "does-your-law-firm-have-an-ai-strategy",
     "will-ai-insurance-underwriters-ask-about-your-firms-ai-use",
