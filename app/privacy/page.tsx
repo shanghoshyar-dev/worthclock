@@ -19,13 +19,34 @@ export default function PrivacyPage() {
           <li>
             Payment information (processed by Stripe, we do not store card details)
           </li>
+          <li>
+            Website usage data via Google Analytics if you accept analytics
+            cookies (pages viewed, approximate location, device/browser type)
+          </li>
         </ul>
+      </LegalSection>
+
+      <LegalSection title="Cookies and analytics">
+        <p>
+          We use Google Analytics only after you accept analytics cookies. Ads
+          and ad personalization storage stay denied. You can Accept or Reject in
+          the banner, or change your choice later via Cookie settings in the
+          footer.
+        </p>
+        <p>
+          If you reject, we do not enable analytics storage for Google Analytics
+          on your browser.
+        </p>
       </LegalSection>
 
       <LegalSection title="How we use it">
         <ul className="list-disc space-y-2 pl-5">
           <li>To conduct your AI Tools Assessment and generate your report</li>
           <li>To communicate with you about your booking and results</li>
+          <li>
+            To understand how the website is used (only if you accept analytics
+            cookies)
+          </li>
           <li>We do not sell your data to third parties</li>
         </ul>
       </LegalSection>
@@ -52,6 +73,10 @@ export default function PrivacyPage() {
             session
           </li>
           <li>
+            You can withdraw analytics cookie consent anytime via Cookie
+            settings in the footer
+          </li>
+          <li>
             Contact us at{" "}
             <a href={`mailto:${site.email}`} className="underline underline-offset-4">
               {site.email}
@@ -64,6 +89,7 @@ export default function PrivacyPage() {
       <LegalSection title="Third-party processors">
         <ul className="list-disc space-y-2 pl-5">
           <li>Stripe (payment processing)</li>
+          <li>Google Analytics (website analytics, only with your consent)</li>
         </ul>
       </LegalSection>
 

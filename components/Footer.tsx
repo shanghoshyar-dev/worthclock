@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CookieSettingsButton } from "./CookieSettingsButton";
 import { Logo } from "./Logo";
 import { site } from "@/lib/site";
 
@@ -55,6 +56,9 @@ export function Footer() {
               <Link href="/terms" className="hover:text-cream">
                 Terms of Service
               </Link>
+            </li>
+            <li>
+              <CookieSettingsButton />
             </li>
             <li>
               <a href={`mailto:${site.email}`} className="hover:text-cream">
