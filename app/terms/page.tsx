@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { LegalDraftNotice, LegalLayout, LegalSection } from "@/components/Legal";
+import { LegalLayout, LegalSection } from "@/components/Legal";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -11,8 +11,6 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <LegalLayout title="WorthClock Terms of Service">
-      <LegalDraftNotice />
-
       <LegalSection title="The Service">
         <p>
           WorthClock provides a paid AI Tools Assessment consisting of a

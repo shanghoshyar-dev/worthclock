@@ -2,15 +2,6 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
-export function LegalDraftNotice() {
-  return (
-    <p className="mb-10 rounded-md border border-brass/35 bg-brass/10 px-4 py-3 text-sm leading-relaxed text-ink-soft">
-      Placeholder structure. Have this reviewed by a lawyer before launch,
-      especially given call recording and GDPR obligations.
-    </p>
-  );
-}
-
 export function LegalLayout({
   title,
   children,

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LegalDraftNotice, LegalLayout, LegalSection } from "@/components/Legal";
+import { LegalLayout, LegalSection } from "@/components/Legal";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -10,8 +10,6 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <LegalLayout title="WorthClock Privacy Policy">
-      <LegalDraftNotice />
-
       <LegalSection title="What we collect">
         <ul className="list-disc space-y-2 pl-5">
           <li>Contact information you provide when booking (name, email, company)</li>
