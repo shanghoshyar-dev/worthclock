@@ -27,6 +27,10 @@ import {
   cyberattacksFaqs,
 } from "@/components/blog/CyberattacksArticle";
 import {
+  EuAiActDeadlineArticle,
+  euAiActDeadlineFaqs,
+} from "@/components/blog/EuAiActDeadlineArticle";
+import {
   FiveQuestionsArticle,
   fiveQuestionsFaqs,
 } from "@/components/blog/FiveQuestionsArticle";
@@ -69,6 +73,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "the-eu-ai-act-deadline-got-pushed-back-heres-what-still-applies-right-now": {
+    faqs: euAiActDeadlineFaqs,
+    Content: EuAiActDeadlineArticle,
+  },
   "your-lawyers-are-already-using-ai-almost-nobody-trained-them": {
     faqs: aiTrainingFaqs,
     Content: AiTrainingArticle,

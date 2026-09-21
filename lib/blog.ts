@@ -15,6 +15,16 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "the-eu-ai-act-deadline-got-pushed-back-heres-what-still-applies-right-now",
+    title:
+      "The EU AI Act Deadline Got Pushed Back. Here's What Still Applies Right Now.",
+    description:
+      "The EU AI Act's high-risk deadline for law firms moved to December 2027, but several obligations are already active today. Here's what actually applies as of now.",
+    date: "2026-09-21",
+    dateLabel: "21 September 2026",
+    readingMinutes: 6,
+  },
+  {
     slug: "your-lawyers-are-already-using-ai-almost-nobody-trained-them",
     title: "Your Lawyers Are Already Using AI. Almost Nobody Trained Them.",
     description:
@@ -150,6 +160,11 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
+  "the-eu-ai-act-deadline-got-pushed-back-heres-what-still-applies-right-now": [
+    "does-your-law-firm-have-an-ai-strategy",
+    "should-your-firm-tell-clients-when-youre-using-ai-on-their-matter",
+    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
+  ],
   "your-lawyers-are-already-using-ai-almost-nobody-trained-them": [
     "does-your-law-firm-have-an-ai-strategy",
     "ai-hallucinations-in-legal-filings",
@@ -161,8 +176,8 @@ export const relatedBySlug: Record<string, readonly string[]> = {
     "is-it-safe-to-use-ai-with-privileged-client-information",
   ],
   "should-your-firm-tell-clients-when-youre-using-ai-on-their-matter": [
+    "the-eu-ai-act-deadline-got-pushed-back-heres-what-still-applies-right-now",
     "is-it-safe-to-use-ai-with-privileged-client-information",
-    "will-ai-insurance-underwriters-ask-about-your-firms-ai-use",
     "does-your-law-firm-have-an-ai-strategy",
   ],
   "why-law-firm-invoices-are-getting-rejected-more-than-ever": [
@@ -211,9 +226,9 @@ export const relatedBySlug: Record<string, readonly string[]> = {
     "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks",
   ],
   "does-your-law-firm-have-an-ai-strategy": [
+    "the-eu-ai-act-deadline-got-pushed-back-heres-what-still-applies-right-now",
     "5-questions-to-ask-before-adopting-any-legal-ai-tool",
     "is-it-safe-to-use-ai-with-privileged-client-information",
-    "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks",
   ],
   "ai-hallucinations-in-legal-filings": [
     "ai-legal-research-how-much-time-are-firms-actually-saving",
