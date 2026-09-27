@@ -55,6 +55,10 @@ import {
   losingClientsFaqs,
 } from "@/components/blog/LosingClientsArticle";
 import {
+  MaDueDiligenceArticle,
+  maDueDiligenceFaqs,
+} from "@/components/blog/MaDueDiligenceArticle";
+import {
   PrivilegedDataArticle,
   privilegedFaqs,
 } from "@/components/blog/PrivilegedDataArticle";
@@ -73,6 +77,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "ai-in-ma-due-diligence-how-much-faster-is-it-really": {
+    faqs: maDueDiligenceFaqs,
+    Content: MaDueDiligenceArticle,
+  },
   "the-eu-ai-act-deadline-got-pushed-back-heres-what-still-applies-right-now": {
     faqs: euAiActDeadlineFaqs,
     Content: EuAiActDeadlineArticle,

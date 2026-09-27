@@ -15,6 +15,15 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "ai-in-ma-due-diligence-how-much-faster-is-it-really",
+    title: "AI in M&A Due Diligence: How Much Faster Is It, Really?",
+    description:
+      "A mid-market acquisition can produce tens of thousands of documents. Here's what AI-assisted due diligence actually saves, and where the real risk still sits.",
+    date: "2026-09-27",
+    dateLabel: "27 September 2026",
+    readingMinutes: 6,
+  },
+  {
     slug: "the-eu-ai-act-deadline-got-pushed-back-heres-what-still-applies-right-now",
     title:
       "The EU AI Act Deadline Got Pushed Back. Here's What Still Applies Right Now.",
@@ -160,6 +169,11 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
+  "ai-in-ma-due-diligence-how-much-faster-is-it-really": [
+    "ai-contract-review-how-much-time-can-it-actually-save",
+    "is-it-safe-to-use-ai-with-privileged-client-information",
+    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
+  ],
   "the-eu-ai-act-deadline-got-pushed-back-heres-what-still-applies-right-now": [
     "does-your-law-firm-have-an-ai-strategy",
     "should-your-firm-tell-clients-when-youre-using-ai-on-their-matter",
@@ -196,8 +210,8 @@ export const relatedBySlug: Record<string, readonly string[]> = {
     "does-your-law-firm-have-an-ai-strategy",
   ],
   "ai-contract-review-how-much-time-can-it-actually-save": [
+    "ai-in-ma-due-diligence-how-much-faster-is-it-really",
     "ai-legal-research-how-much-time-are-firms-actually-saving",
-    "why-ai-wont-reduce-your-firms-billable-hours",
     "5-questions-to-ask-before-adopting-any-legal-ai-tool",
   ],
   "how-clients-are-already-using-ai-instead-of-calling-your-firm": [
@@ -221,9 +235,9 @@ export const relatedBySlug: Record<string, readonly string[]> = {
     "will-ai-insurance-underwriters-ask-about-your-firms-ai-use",
   ],
   "is-it-safe-to-use-ai-with-privileged-client-information": [
+    "ai-in-ma-due-diligence-how-much-faster-is-it-really",
     "5-questions-to-ask-before-adopting-any-legal-ai-tool",
     "ai-hallucinations-in-legal-filings",
-    "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks",
   ],
   "does-your-law-firm-have-an-ai-strategy": [
     "the-eu-ai-act-deadline-got-pushed-back-heres-what-still-applies-right-now",
