@@ -15,12 +15,21 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
+    title: "How to Measure Whether AI Is Actually Saving Your Law Firm Time",
+    description:
+      "Most legal organizations using AI cannot say whether it is working. Here is what the 2026 data shows about measuring AI ROI, and a simple way for a law firm to start.",
+    date: "2026-10-08",
+    dateLabel: "8 October 2026",
+    readingMinutes: 6,
+  },
+  {
     slug: "how-many-hours-per-week-does-ai-really-save-a-lawyer",
     title: "How Many Hours Per Week Does AI Really Save a Lawyer?",
     description:
       "Surveys show lawyers saving anywhere from one to five hours a week with AI, yet most firms see little of it. Here is what the data says and why the gap exists.",
-    date: "2026-10-08",
-    dateLabel: "8 October 2026",
+    date: "2026-10-03",
+    dateLabel: "3 October 2026",
     readingMinutes: 6,
   },
   {
@@ -178,9 +187,14 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
-  "how-many-hours-per-week-does-ai-really-save-a-lawyer": [
+  "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time": [
+    "how-many-hours-per-week-does-ai-really-save-a-lawyer",
     "why-ai-wont-reduce-your-firms-billable-hours",
-    "your-lawyers-are-already-using-ai-almost-nobody-trained-them",
+    "does-your-law-firm-have-an-ai-strategy",
+  ],
+  "how-many-hours-per-week-does-ai-really-save-a-lawyer": [
+    "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
+    "why-ai-wont-reduce-your-firms-billable-hours",
     "does-your-law-firm-have-an-ai-strategy",
   ],
   "ai-in-ma-due-diligence-how-much-faster-is-it-really": [
@@ -239,9 +253,9 @@ export const relatedBySlug: Record<string, readonly string[]> = {
     "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks",
   ],
   "why-ai-wont-reduce-your-firms-billable-hours": [
+    "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
     "how-many-hours-per-week-does-ai-really-save-a-lawyer",
     "ai-legal-research-how-much-time-are-firms-actually-saving",
-    "ai-contract-review-how-much-time-can-it-actually-save",
   ],
   "5-questions-to-ask-before-adopting-any-legal-ai-tool": [
     "is-it-safe-to-use-ai-with-privileged-client-information",
@@ -254,7 +268,7 @@ export const relatedBySlug: Record<string, readonly string[]> = {
     "ai-hallucinations-in-legal-filings",
   ],
   "does-your-law-firm-have-an-ai-strategy": [
-    "the-eu-ai-act-deadline-got-pushed-back-heres-what-still-applies-right-now",
+    "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
     "5-questions-to-ask-before-adopting-any-legal-ai-tool",
     "is-it-safe-to-use-ai-with-privileged-client-information",
   ],

@@ -63,6 +63,10 @@ import {
   maDueDiligenceFaqs,
 } from "@/components/blog/MaDueDiligenceArticle";
 import {
+  MeasureAiRoiArticle,
+  measureAiRoiFaqs,
+} from "@/components/blog/MeasureAiRoiArticle";
+import {
   PrivilegedDataArticle,
   privilegedFaqs,
 } from "@/components/blog/PrivilegedDataArticle";
@@ -81,6 +85,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time": {
+    faqs: measureAiRoiFaqs,
+    Content: MeasureAiRoiArticle,
+  },
   "how-many-hours-per-week-does-ai-really-save-a-lawyer": {
     faqs: hoursSavedFaqs,
     Content: HoursSavedArticle,
