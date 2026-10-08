@@ -39,6 +39,10 @@ import {
   hallucinationFaqs,
 } from "@/components/blog/HallucinationsArticle";
 import {
+  HoursSavedArticle,
+  hoursSavedFaqs,
+} from "@/components/blog/HoursSavedArticle";
+import {
   InsuranceArticle,
   insuranceFaqs,
 } from "@/components/blog/InsuranceArticle";
@@ -77,6 +81,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "how-many-hours-per-week-does-ai-really-save-a-lawyer": {
+    faqs: hoursSavedFaqs,
+    Content: HoursSavedArticle,
+  },
   "ai-in-ma-due-diligence-how-much-faster-is-it-really": {
     faqs: maDueDiligenceFaqs,
     Content: MaDueDiligenceArticle,
