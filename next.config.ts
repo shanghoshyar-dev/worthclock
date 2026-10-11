@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source:
+          "/blog/how-a-17-person-law-firm-in-poland-saved-6-hours-a-week-with-ai",
+        destination:
+          "/case-studies/how-a-17-person-law-firm-in-poland-saved-6-hours-a-week-with-ai",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

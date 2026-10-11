@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/lib/blog";
+import { caseStudies } from "@/lib/case-studies";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -8,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/book",
     "/blog",
+    "/case-studies",
     "/ai-readiness-check",
     "/privacy",
     "/terms",
@@ -22,5 +24,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.date),
   }));
 
-  return [...staticPages, ...blogPosts];
+  const studyPages = caseStudies.map((study) => ({
+    url: `${site.url}/case-studies/${study.slug}`,
+    lastModified: new Date(study.date),
+  }));
+
+  return [...staticPages, ...blogPosts, ...studyPages];
 }

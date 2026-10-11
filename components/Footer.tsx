@@ -33,6 +33,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/case-studies" className="hover:text-cream">
+                Case Studies
+              </Link>
+            </li>
+            <li>
               <Link href="/book" className="hover:text-cream">
                 Book an assessment
               </Link>

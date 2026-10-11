@@ -1,6 +1,5 @@
 import Link from "next/link";
-import type { BlogFaq } from "@/lib/blog";
-import { relatedBySlug } from "@/lib/blog";
+import type { CaseStudyFaq } from "@/lib/case-studies";
 import {
   ArticleCta,
   ArticleFaq,
@@ -10,7 +9,7 @@ import {
   blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
-export const polandCaseStudyFaqs: BlogFaq[] = [
+export const polandCaseStudyFaqs: CaseStudyFaq[] = [
   {
     q: "How long did it take to see results?",
     a: "The changes were introduced right after the assessment, and the time savings were measured over the following weeks.",
@@ -25,7 +24,7 @@ export const polandCaseStudyFaqs: BlogFaq[] = [
   },
 ];
 
-export function PolandCaseStudyArticle() {
+export function PolandCaseStudy() {
   return (
     <>
       <QuickAnswer>
@@ -164,11 +163,11 @@ export function PolandCaseStudyArticle() {
       <ArticleFaq faqs={polandCaseStudyFaqs} />
 
       <RelatedReading
-        slugs={
-          relatedBySlug[
-            "how-a-17-person-law-firm-in-poland-saved-6-hours-a-week-with-ai"
-          ]
-        }
+        slugs={[
+          "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
+          "how-many-hours-per-week-does-ai-really-save-a-lawyer",
+          "does-your-law-firm-have-an-ai-strategy",
+        ]}
       />
 
       <ArticleCta>
