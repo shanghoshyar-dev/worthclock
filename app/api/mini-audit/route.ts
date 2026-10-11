@@ -137,12 +137,7 @@ async function sendLeadNotification({
 
   try {
     const resend = new Resend(apiKey);
-    // Until worthclock.com is verified in Resend, testing mode only delivers
-    // to the Resend account email. Prefer explicit notify env, then founder inbox.
-    const notifyTo =
-      process.env.MINI_AUDIT_NOTIFY_EMAIL ??
-      site.refundCcEmail ??
-      site.email;
+    const notifyTo = process.env.MINI_AUDIT_NOTIFY_EMAIL ?? site.email;
 
     const { error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL ?? "WorthClock <onboarding@resend.dev>",
@@ -150,7 +145,7 @@ async function sendLeadNotification({
       replyTo: email,
       subject: `Mini Audit lead: ${companyName} (${resultCategory})`,
       text: [
-        "New Mini Audit submission",
+        "New Mini Audit lead — contact them",
         "",
         `Email: ${email}`,
         `Company: ${companyName}`,
