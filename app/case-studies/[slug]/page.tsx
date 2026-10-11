@@ -21,7 +21,7 @@ const studies: Record<
   string,
   { faqs: CaseStudyFaq[]; Content: () => ReactNode }
 > = {
-  "how-a-17-person-law-firm-in-poland-saved-6-hours-a-week-with-ai": {
+  "poland-law-firm-6-hours": {
     faqs: polandCaseStudyFaqs,
     Content: PolandCaseStudy,
   },

@@ -6,8 +6,13 @@ const nextConfig: NextConfig = {
       {
         source:
           "/blog/how-a-17-person-law-firm-in-poland-saved-6-hours-a-week-with-ai",
-        destination:
+        destination: "/case-studies/poland-law-firm-6-hours",
+        permanent: true,
+      },
+      {
+        source:
           "/case-studies/how-a-17-person-law-firm-in-poland-saved-6-hours-a-week-with-ai",
+        destination: "/case-studies/poland-law-firm-6-hours",
         permanent: true,
       },
     ];

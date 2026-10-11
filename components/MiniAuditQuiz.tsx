@@ -1,10 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useTransition, type FormEvent } from "react";
 import { ButtonLink } from "@/components/Button";
 import {
   branchQuestion,
   getAnswerFlags,
+  getHoursEstimate,
   getNextStepPlan,
   questionsFor,
   resultCopy,
@@ -14,8 +16,6 @@ import {
 } from "@/lib/mini-audit";
 
 type Phase = "branch" | "questions" | "email" | "result";
-
-const totalQuestionSteps = 5;
 
 export function MiniAuditQuiz() {
   const [phase, setPhase] = useState<Phase>("branch");
@@ -32,19 +32,20 @@ export function MiniAuditQuiz() {
   const current = questions[stepIndex];
   const resultFlags =
     phase === "result" && version ? getAnswerFlags(version, answers) : [];
+  const hoursEstimate =
+    phase === "result" && version ? getHoursEstimate(version, answers) : "";
   const nextSteps =
     phase === "result" && version && result
       ? getNextStepPlan(version, result)
       : [];
 
-  // Progress: branch = 0, then 1–5 questions, email before result
-  const progressTotal = totalQuestionSteps + 1; // branch + 5 questions
-  const progressCurrent =
+  const questionTotal = questions.length;
+  const progressRatio =
     phase === "branch"
       ? 0
-      : phase === "questions"
-        ? stepIndex + 1
-        : progressTotal;
+      : phase === "questions" && questionTotal > 0
+        ? (stepIndex + 1) / questionTotal
+        : 1;
 
   function selectBranch(option: string) {
     setError("");
@@ -124,13 +125,16 @@ export function MiniAuditQuiz() {
   return (
     <div className="mx-auto max-w-2xl">
       {phase !== "result" ? (
-        <div className="mb-10" aria-hidden="true">
-          <div className="h-0.5 w-full bg-line">
+        <div className="mb-10">
+          {phase === "questions" && questionTotal > 0 ? (
+            <p className="mb-3 text-sm font-medium text-muted">
+              Question {stepIndex + 1} of {questionTotal}
+            </p>
+          ) : null}
+          <div className="h-0.5 w-full bg-line" aria-hidden="true">
             <div
               className="h-full bg-brass transition-[width] duration-300 ease-out"
-              style={{
-                width: `${(progressCurrent / progressTotal) * 100}%`,
-              }}
+              style={{ width: `${progressRatio * 100}%` }}
             />
           </div>
         </div>
@@ -227,6 +231,13 @@ export function MiniAuditQuiz() {
                 </ul>
               </div>
             ) : null}
+            {hoursEstimate ? (
+              <div className="mt-8 rounded-lg border border-line bg-cream px-6 py-5 sm:px-8">
+                <p className="text-[1.05rem] leading-relaxed text-ink">
+                  {hoursEstimate}
+                </p>
+              </div>
+            ) : null}
             {nextSteps.length > 0 ? (
               <div className="mt-12">
                 <h2 className="font-display text-2xl tracking-tight sm:text-3xl">
@@ -253,9 +264,27 @@ export function MiniAuditQuiz() {
                 </ol>
               </div>
             ) : null}
-            <ButtonLink href="/book" className="mt-10">
+            <blockquote className="mt-12 rounded-lg border border-line bg-cream px-6 py-6 sm:px-8">
+              <p className="text-[1.05rem] leading-relaxed text-ink-soft">
+                &ldquo;Emails and case reviews were taking up most of our week.
+                We save around six hours a week now.&rdquo;
+              </p>
+              <footer className="mt-3 text-sm text-muted">
+                Managing partner, 17 person law firm in Poland ·{" "}
+                <Link
+                  href="/case-studies/poland-law-firm-6-hours"
+                  className="font-semibold text-copper underline underline-offset-4 hover:text-copper-hover"
+                >
+                  Read the case
+                </Link>
+              </footer>
+            </blockquote>
+            <ButtonLink href="/book" className="mt-8">
               Get a full picture with our AI Tools Assessment
             </ButtonLink>
+            <p className="mt-3 text-sm text-muted">
+              At least 5 hours saved per week, or your money back.
+            </p>
           </section>
         ) : null}
       </div>

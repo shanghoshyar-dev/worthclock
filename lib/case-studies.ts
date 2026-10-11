@@ -14,7 +14,7 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "how-a-17-person-law-firm-in-poland-saved-6-hours-a-week-with-ai",
+    slug: "poland-law-firm-6-hours",
     title: "How a 17 Person Law Firm in Poland Saved 6 Hours a Week With AI",
     description:
       "A 17 person law firm in Poland was losing most of its week to emails and case reviews. After one AI Tools Assessment, it saves an average of 6 hours per week.",

@@ -45,6 +45,12 @@ export const lawFirmQuestions: readonly QuizQuestion[] = [
     options: ["Less than 5 hours", "5–15 hours", "More than 15 hours"],
   },
   {
+    id: "email_time",
+    prompt:
+      "How much time does your team spend weekly on emails and client communication?",
+    options: ["Less than 5 hours", "5 to 15 hours", "More than 15 hours"],
+  },
+  {
     id: "concern",
     prompt:
       "Has your firm had any AI-related concern, an uncertain citation, a tool you weren't sure was safe, a client asking about your AI use?",
@@ -110,6 +116,14 @@ export function questionsFor(version: QuizVersion) {
   return version === "law_firm" ? lawFirmQuestions : generalQuestions;
 }
 
+function isMidOrHighHours(answer: string) {
+  return (
+    answer === "5–15 hours" ||
+    answer === "5 to 15 hours" ||
+    answer === "More than 15 hours"
+  );
+}
+
 /** Risk signal: No / Not sure / low maturity answers score higher. */
 function optionRisk(questionId: string, answer: string): number {
   if (questionId === "ai_use") {
@@ -119,6 +133,7 @@ function optionRisk(questionId: string, answer: string): number {
   }
   if (questionId === "policy" || questionId === "concern") {
     if (answer === "No" || answer === "Not sure") return 2;
+    if (questionId === "concern" && answer === "Yes") return 1;
     return 0;
   }
   if (questionId === "response_time") {
@@ -126,9 +141,9 @@ function optionRisk(questionId: string, answer: string): number {
     if (answer === "Within a few hours") return 1;
     return 0;
   }
-  if (questionId === "time_spent") {
+  if (questionId === "time_spent" || questionId === "email_time") {
     if (answer === "More than 15 hours") return 2;
-    if (answer === "5–15 hours") return 1;
+    if (answer === "5–15 hours" || answer === "5 to 15 hours") return 1;
     return 0;
   }
   return 0;
@@ -163,103 +178,155 @@ export function scoreResult(
   }
 
   // Mostly No / Not sure / early answers
-  if (aiUse === "No, not yet" || highRiskCount >= 3 || riskSignals >= 7) {
+  if (aiUse === "No, not yet" || highRiskCount >= 3 || riskSignals >= 8) {
     return "Early Stage";
   }
 
   return "In Progress";
 }
 
-type AnswerFlag = {
+export type AnswerFinding = {
   id: string;
-  /** Lower number = shown first when capping at 3. */
+  text: string;
+  timeRelated: boolean;
+  /** Lower number = shown first. */
   priority: number;
   match: (answer: string) => boolean;
-  text: string;
 };
 
-const lawFirmFlags: readonly AnswerFlag[] = [
-  {
-    id: "ai_use",
-    priority: 3,
-    match: (a) => a === "No, not yet",
-    text: "No AI tools in use yet",
-  },
+const lawFirmFindings: readonly AnswerFinding[] = [
   {
     id: "policy",
     priority: 1,
+    timeRelated: false,
     match: (a) => a === "No" || a === "Not sure",
     text: "No clear policy yet on which AI tools are safe to use with client data",
   },
   {
     id: "response_time",
     priority: 2,
+    timeRelated: true,
     match: (a) => a === "A day or more",
-    text: "Client inquiry response time could likely be faster",
+    text: "Slow response to new inquiries. Firms often lose clients to whoever answers first.",
+  },
+  {
+    id: "response_time",
+    priority: 3,
+    timeRelated: true,
+    match: (a) => a === "Within a few hours",
+    text: "Intake response time can likely be cut to minutes with automation.",
   },
   {
     id: "time_spent",
     priority: 4,
-    match: (a) => a === "More than 15 hours",
-    text: "A significant amount of time going into document review, contract review, or legal research each week",
+    timeRelated: true,
+    match: (a) => isMidOrHighHours(a),
+    text: "Document and case review is one of your biggest time sinks, and one of the areas where AI saves the most.",
+  },
+  {
+    id: "email_time",
+    priority: 5,
+    timeRelated: true,
+    match: (a) => isMidOrHighHours(a),
+    text: "Email handling takes a large share of your week. Routine emails can often be automated.",
   },
   {
     id: "concern",
-    priority: 5,
-    match: (a) => a === "Yes",
-    text: "Has already had at least one AI-related concern worth addressing",
+    priority: 6,
+    timeRelated: false,
+    match: (a) => a === "Yes" || a === "Not sure",
+    text: "There has already been an AI related concern. A clear review step and approved tool list would reduce that risk.",
+  },
+  {
+    id: "ai_use",
+    priority: 7,
+    timeRelated: false,
+    match: (a) => a === "Occasionally, a few people",
+    text: "AI use is happening, but unevenly. Savings stay with individuals instead of the whole firm.",
+  },
+  {
+    id: "ai_use",
+    priority: 8,
+    timeRelated: false,
+    match: (a) => a === "No, not yet",
+    text: "No AI tools in use yet",
   },
 ];
 
-const generalFlags: readonly AnswerFlag[] = [
+const generalFlags: readonly AnswerFinding[] = [
   {
     id: "ai_use",
     priority: 3,
+    timeRelated: false,
     match: (a) => a === "No, not yet",
     text: "No AI tools in use yet",
   },
   {
     id: "policy",
     priority: 1,
+    timeRelated: false,
     match: (a) => a === "No" || a === "Not sure",
     text: "No clear policy yet on which AI tools are safe to use with company data",
   },
   {
     id: "response_time",
     priority: 2,
+    timeRelated: true,
     match: (a) => a === "A day or more",
     text: "Customer inquiry response time could likely be faster",
   },
   {
     id: "time_spent",
     priority: 4,
+    timeRelated: true,
     match: (a) => a === "More than 15 hours",
     text: "A significant amount of time going into repetitive tasks like data entry, email, or reporting each week",
   },
   {
     id: "concern",
     priority: 5,
+    timeRelated: false,
     match: (a) => a === "Yes",
     text: "Has already had at least one AI-related concern worth addressing",
   },
 ];
 
-/** Up to 3 answer-driven flags, prioritizing policy and response time. */
-export function getAnswerFlags(
+function matchedFindings(
   version: QuizVersion,
   answers: Record<string, string>,
-  limit = 3,
-): string[] {
-  const defs = version === "law_firm" ? lawFirmFlags : generalFlags;
-
+): AnswerFinding[] {
+  const defs = version === "law_firm" ? lawFirmFindings : generalFlags;
   return defs
     .filter((flag) => {
       const answer = answers[flag.id];
       return Boolean(answer && flag.match(answer));
     })
-    .sort((a, b) => a.priority - b.priority)
-    .slice(0, limit)
-    .map((flag) => flag.text);
+    .sort((a, b) => a.priority - b.priority);
+}
+
+/** Answer-driven findings. Law firm: all matches. General: up to 3. */
+export function getAnswerFlags(
+  version: QuizVersion,
+  answers: Record<string, string>,
+  limit = 3,
+): string[] {
+  const matched = matchedFindings(version, answers);
+  const capped = version === "law_firm" ? matched : matched.slice(0, limit);
+  return capped.map((flag) => flag.text);
+}
+
+export function getHoursEstimate(
+  version: QuizVersion,
+  answers: Record<string, string>,
+): string {
+  const timeFindings = matchedFindings(version, answers).filter(
+    (f) => f.timeRelated,
+  ).length;
+
+  if (timeFindings >= 2) {
+    return "Firms with answers like yours typically save 5 to 10 hours a week.";
+  }
+  return "Firms with answers like yours typically save 3 to 6 hours a week.";
 }
 
 export type NextStep = {
