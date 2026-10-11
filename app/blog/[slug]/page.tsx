@@ -67,6 +67,10 @@ import {
   measureAiRoiFaqs,
 } from "@/components/blog/MeasureAiRoiArticle";
 import {
+  PolandCaseStudyArticle,
+  polandCaseStudyFaqs,
+} from "@/components/blog/PolandCaseStudyArticle";
+import {
   PrivilegedDataArticle,
   privilegedFaqs,
 } from "@/components/blog/PrivilegedDataArticle";
@@ -85,6 +89,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "how-a-17-person-law-firm-in-poland-saved-6-hours-a-week-with-ai": {
+    faqs: polandCaseStudyFaqs,
+    Content: PolandCaseStudyArticle,
+  },
   "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time": {
     faqs: measureAiRoiFaqs,
     Content: MeasureAiRoiArticle,

@@ -15,6 +15,15 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "how-a-17-person-law-firm-in-poland-saved-6-hours-a-week-with-ai",
+    title: "How a 17 Person Law Firm in Poland Saved 6 Hours a Week With AI",
+    description:
+      "A 17 person law firm in Poland was losing most of its week to emails and case reviews. After one AI Tools Assessment, it saves an average of 6 hours per week.",
+    date: "2026-10-11",
+    dateLabel: "11 October 2026",
+    readingMinutes: 5,
+  },
+  {
     slug: "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
     title: "How to Measure Whether AI Is Actually Saving Your Law Firm Time",
     description:
@@ -187,14 +196,19 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
-  "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time": [
+  "how-a-17-person-law-firm-in-poland-saved-6-hours-a-week-with-ai": [
+    "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
     "how-many-hours-per-week-does-ai-really-save-a-lawyer",
-    "why-ai-wont-reduce-your-firms-billable-hours",
+    "does-your-law-firm-have-an-ai-strategy",
+  ],
+  "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time": [
+    "how-a-17-person-law-firm-in-poland-saved-6-hours-a-week-with-ai",
+    "how-many-hours-per-week-does-ai-really-save-a-lawyer",
     "does-your-law-firm-have-an-ai-strategy",
   ],
   "how-many-hours-per-week-does-ai-really-save-a-lawyer": [
+    "how-a-17-person-law-firm-in-poland-saved-6-hours-a-week-with-ai",
     "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
-    "why-ai-wont-reduce-your-firms-billable-hours",
     "does-your-law-firm-have-an-ai-strategy",
   ],
   "ai-in-ma-due-diligence-how-much-faster-is-it-really": [
