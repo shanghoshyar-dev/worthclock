@@ -149,6 +149,23 @@ export function RelatedReading({ slugs }: { slugs: readonly string[] }) {
   );
 }
 
+export function MiniAuditCtaBox() {
+  return (
+    <aside className="mt-8 rounded-lg border border-line bg-cream px-6 py-6 sm:px-8">
+      <p className="font-display text-xl tracking-tight text-ink sm:text-2xl">
+        Not sure where your firm stands?
+      </p>
+      <p className="mt-2 text-[1.02rem] leading-relaxed text-ink-soft">
+        Take the free 3 minute Mini Audit and see where AI could save your firm
+        the most time.
+      </p>
+      <ButtonLink href="/ai-readiness-check" variant="secondary" className="mt-5">
+        Take the Mini Audit
+      </ButtonLink>
+    </aside>
+  );
+}
+
 export function ArticleCta({ children }: { children: ReactNode }) {
   return (
     <section className="mt-14">
@@ -156,6 +173,7 @@ export function ArticleCta({ children }: { children: ReactNode }) {
       <div className="mt-5 space-y-4 text-[1.05rem] leading-relaxed text-ink-soft">
         {children}
       </div>
+      <MiniAuditCtaBox />
       <ButtonLink href="/book" className="mt-8">
         Book Your Assessment
       </ButtonLink>
