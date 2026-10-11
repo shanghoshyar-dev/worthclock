@@ -97,15 +97,26 @@ export async function POST(request: Request) {
     );
   }
 
-  await sendLeadNotification({
-    email,
-    companyName,
-    version,
-    answers,
-    resultCategory,
-  });
+  await Promise.all([
+    sendLeadNotification({
+      email,
+      companyName,
+      version,
+      answers,
+      resultCategory,
+    }),
+    sendLeadConfirmation({
+      email,
+      companyName,
+      resultCategory,
+    }),
+  ]);
 
   return NextResponse.json({ ok: true });
+}
+
+function resendFrom() {
+  return process.env.RESEND_FROM_EMAIL ?? `WorthClock <${site.email}>`;
 }
 
 async function sendLeadNotification({
@@ -140,7 +151,7 @@ async function sendLeadNotification({
     const notifyTo = process.env.MINI_AUDIT_NOTIFY_EMAIL ?? site.email;
 
     const { error } = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL ?? "WorthClock <onboarding@resend.dev>",
+      from: resendFrom(),
       to: [notifyTo],
       replyTo: email,
       subject: `Mini Audit lead: ${companyName} (${resultCategory})`,
@@ -163,5 +174,52 @@ async function sendLeadNotification({
   } catch (err) {
     // Lead is already stored; don't fail the user flow on email issues
     console.error("Resend notification failed:", err);
+  }
+}
+
+async function sendLeadConfirmation({
+  email,
+  companyName,
+  resultCategory,
+}: {
+  email: string;
+  companyName: string;
+  resultCategory: ResultCategory;
+}) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.warn("RESEND_API_KEY missing; skipped mini-audit confirmation email.");
+    return;
+  }
+
+  try {
+    const resend = new Resend(apiKey);
+    const { error } = await resend.emails.send({
+      from: resendFrom(),
+      to: [email],
+      replyTo: site.email,
+      subject: `Your WorthClock Mini Audit result: ${resultCategory}`,
+      text: [
+        "Hi,",
+        "",
+        "Thanks for completing the WorthClock AI Readiness Mini Audit.",
+        "",
+        `Company: ${companyName}`,
+        `Your result category: ${resultCategory}`,
+        "",
+        "If you want a clear plan for which AI tools are actually worth adopting in your firm, book an AI Tools Assessment:",
+        `${site.url}/book`,
+        "",
+        "Questions? Reply to this email or write to info@worthclock.com.",
+        "",
+        "— WorthClock",
+      ].join("\n"),
+    });
+
+    if (error) {
+      console.error("Resend confirmation failed:", error);
+    }
+  } catch (err) {
+    console.error("Resend confirmation failed:", err);
   }
 }
