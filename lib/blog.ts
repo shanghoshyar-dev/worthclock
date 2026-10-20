@@ -15,6 +15,16 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "does-the-eu-ai-act-require-ai-training-for-law-firms-what-article-4-means-in-2026",
+    title:
+      "Does the EU AI Act Require AI Training for Law Firms? What Article 4 Means in 2026",
+    description:
+      "Article 4 of the EU AI Act requires firms that use AI to support AI literacy among their staff. Here is what the obligation means for law firms after the Digital Omnibus, and how to meet it without a big training programme.",
+    date: "2026-10-20",
+    dateLabel: "20 October 2026",
+    readingMinutes: 6,
+  },
+  {
     slug: "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
     title: "How to Measure Whether AI Is Actually Saving Your Law Firm Time",
     description:
@@ -187,6 +197,12 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
+  "does-the-eu-ai-act-require-ai-training-for-law-firms-what-article-4-means-in-2026":
+    [
+      "the-eu-ai-act-deadline-got-pushed-back-heres-what-still-applies-right-now",
+      "your-lawyers-are-already-using-ai-almost-nobody-trained-them",
+      "does-your-law-firm-have-an-ai-strategy",
+    ],
   "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time": [
     "how-many-hours-per-week-does-ai-really-save-a-lawyer",
     "why-ai-wont-reduce-your-firms-billable-hours",
@@ -203,14 +219,14 @@ export const relatedBySlug: Record<string, readonly string[]> = {
     "5-questions-to-ask-before-adopting-any-legal-ai-tool",
   ],
   "the-eu-ai-act-deadline-got-pushed-back-heres-what-still-applies-right-now": [
+    "does-the-eu-ai-act-require-ai-training-for-law-firms-what-article-4-means-in-2026",
     "does-your-law-firm-have-an-ai-strategy",
     "should-your-firm-tell-clients-when-youre-using-ai-on-their-matter",
-    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
   ],
   "your-lawyers-are-already-using-ai-almost-nobody-trained-them": [
+    "does-the-eu-ai-act-require-ai-training-for-law-firms-what-article-4-means-in-2026",
     "how-many-hours-per-week-does-ai-really-save-a-lawyer",
     "does-your-law-firm-have-an-ai-strategy",
-    "ai-hallucinations-in-legal-filings",
   ],
   "law-firms-are-the-perfect-target-for-ai-driven-cyberattacks": [
     "does-your-law-firm-have-an-ai-strategy",

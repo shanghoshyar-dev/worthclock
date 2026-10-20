@@ -27,6 +27,10 @@ import {
   cyberattacksFaqs,
 } from "@/components/blog/CyberattacksArticle";
 import {
+  EuAiActArticle4Article,
+  euAiActArticle4Faqs,
+} from "@/components/blog/EuAiActArticle4Article";
+import {
   EuAiActDeadlineArticle,
   euAiActDeadlineFaqs,
 } from "@/components/blog/EuAiActDeadlineArticle";
@@ -85,6 +89,11 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "does-the-eu-ai-act-require-ai-training-for-law-firms-what-article-4-means-in-2026":
+    {
+      faqs: euAiActArticle4Faqs,
+      Content: EuAiActArticle4Article,
+    },
   "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time": {
     faqs: measureAiRoiFaqs,
     Content: MeasureAiRoiArticle,
