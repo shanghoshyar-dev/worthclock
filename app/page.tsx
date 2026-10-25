@@ -2,6 +2,7 @@ import { ButtonLink } from "@/components/Button";
 import { Faq } from "@/components/Faq";
 import { HashScroll } from "@/components/HashScroll";
 import { HomeJsonLd } from "@/components/HomeJsonLd";
+import { featuredArticles } from "@/lib/featured";
 import { discretionExamples, pricingIncludes, site, steps } from "@/lib/site";
 
 export default function HomePage() {
@@ -103,6 +104,29 @@ export default function HomePage() {
                 <p className="mt-3 text-[1.02rem] leading-relaxed text-ink-soft">
                   {example.outcome}
                 </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="border-b border-line">
+        <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-14">
+          <p className="eyebrow text-brass">Featured in</p>
+          <ul className="mt-5 space-y-6">
+            {featuredArticles.map((article) => (
+              <li key={article.id}>
+                <p className="font-display text-2xl tracking-tight text-ink sm:text-3xl">
+                  {article.publication}
+                </p>
+                <a
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-block max-w-2xl text-[1.05rem] leading-relaxed text-ink-soft underline underline-offset-4 transition-colors hover:text-ink"
+                >
+                  {article.title}
+                </a>
               </li>
             ))}
           </ul>
