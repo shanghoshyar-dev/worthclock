@@ -17,40 +17,40 @@ export function BlogArticleShell({
   children: ReactNode;
 }) {
   const articleUrl = `${site.url}/blog/${post.slug}`;
+  const graph: Record<string, unknown>[] = [
+    {
+      "@type": "Article",
+      headline: post.title,
+      description: post.description,
+      datePublished: post.date,
+      dateModified: post.date,
+      author: { "@id": `${site.url}/#founder` },
+      publisher: { "@id": `${site.url}/#organization` },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": articleUrl,
+      },
+      url: articleUrl,
+    },
+  ];
+
+  if (faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      mainEntity: faqs.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.a,
+        },
+      })),
+    });
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        headline: post.title,
-        description: post.description,
-        datePublished: post.date,
-        dateModified: post.date,
-        author: {
-          "@type": "Person",
-          name: "Shang",
-        },
-        publisher: {
-          "@type": "Organization",
-          name: site.name,
-          url: site.url,
-        },
-        mainEntityOfPage: articleUrl,
-        url: articleUrl,
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: faqs.map((item) => ({
-          "@type": "Question",
-          name: item.q,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: item.a,
-          },
-        })),
-      },
-    ],
+    "@graph": graph,
   };
 
   return (
@@ -65,12 +65,21 @@ export function BlogArticleShell({
           Blog
         </Link>
         {" / "}
-        {post.dateLabel} · {post.readingMinutes} min read
+        {post.readingMinutes} min read
       </p>
 
       <h1 className="font-display mt-4 text-4xl leading-tight tracking-tight sm:text-[2.75rem]">
         {post.title}
       </h1>
+
+      <p className="mt-4 text-sm text-muted">
+        By{" "}
+        <Link href="/about" className="underline underline-offset-4 hover:text-ink">
+          Shang Ahmed
+        </Link>
+        {" · "}
+        {post.dateLabel}
+      </p>
 
       <p className="mt-6 text-lg leading-relaxed text-ink-soft">
         {post.description}

@@ -23,16 +23,12 @@ export function CaseStudyShell({
         description: study.description,
         datePublished: study.date,
         dateModified: study.date,
-        author: {
-          "@type": "Person",
-          name: "Shang",
+        author: { "@id": `${site.url}/#founder` },
+        publisher: { "@id": `${site.url}/#organization` },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": articleUrl,
         },
-        publisher: {
-          "@type": "Organization",
-          name: site.name,
-          url: site.url,
-        },
-        mainEntityOfPage: articleUrl,
         url: articleUrl,
       },
       {

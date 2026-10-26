@@ -1,4 +1,4 @@
-import { faq, site } from "@/lib/site";
+import { faq } from "@/lib/site";
 
 export function HomeJsonLd() {
   const faqPage = {
@@ -14,26 +14,10 @@ export function HomeJsonLd() {
     })),
   };
 
-  const professionalService = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: site.name,
-    description: site.description,
-    price: site.price,
-    areaServed: "European Union",
-    serviceType: "AI Tools Assessment",
-  };
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPage) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalService) }}
-      />
-    </>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPage) }}
+    />
   );
 }
