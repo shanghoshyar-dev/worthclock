@@ -15,6 +15,16 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features",
+    title:
+      "The AI Your Law Firm Never Chose: How to Check Built-In AI Features",
+    description:
+      "Built-in AI in email, documents and meeting tools can expose client data. How law firms can check which AI features are switched on.",
+    date: "2026-10-26",
+    dateLabel: "26 October 2026",
+    readingMinutes: 6,
+  },
+  {
     slug: "does-the-eu-ai-act-require-ai-training-for-law-firms-what-article-4-means-in-2026",
     title:
       "Does the EU AI Act Require AI Training for Law Firms? What Article 4 Means in 2026",
@@ -197,6 +207,11 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
+  "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features": [
+    "is-it-safe-to-use-ai-with-privileged-client-information",
+    "does-your-law-firm-have-an-ai-strategy",
+    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
+  ],
   "does-the-eu-ai-act-require-ai-training-for-law-firms-what-article-4-means-in-2026":
     [
       "the-eu-ai-act-deadline-got-pushed-back-heres-what-still-applies-right-now",
@@ -279,13 +294,13 @@ export const relatedBySlug: Record<string, readonly string[]> = {
     "will-ai-insurance-underwriters-ask-about-your-firms-ai-use",
   ],
   "is-it-safe-to-use-ai-with-privileged-client-information": [
-    "ai-in-ma-due-diligence-how-much-faster-is-it-really",
+    "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features",
     "5-questions-to-ask-before-adopting-any-legal-ai-tool",
     "ai-hallucinations-in-legal-filings",
   ],
   "does-your-law-firm-have-an-ai-strategy": [
+    "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features",
     "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
-    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
     "is-it-safe-to-use-ai-with-privileged-client-information",
   ],
   "ai-hallucinations-in-legal-filings": [

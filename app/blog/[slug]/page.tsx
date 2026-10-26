@@ -15,6 +15,10 @@ import {
   billableHoursFaqs,
 } from "@/components/blog/BillableHoursArticle";
 import {
+  BuiltInAiFeaturesArticle,
+  builtInAiFeaturesFaqs,
+} from "@/components/blog/BuiltInAiFeaturesArticle";
+import {
   ClientsUsingAiArticle,
   clientsUsingAiFaqs,
 } from "@/components/blog/ClientsUsingAiArticle";
@@ -89,6 +93,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features": {
+    faqs: builtInAiFeaturesFaqs,
+    Content: BuiltInAiFeaturesArticle,
+  },
   "does-the-eu-ai-act-require-ai-training-for-law-firms-what-article-4-means-in-2026":
     {
       faqs: euAiActArticle4Faqs,
