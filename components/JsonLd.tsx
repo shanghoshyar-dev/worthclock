@@ -25,7 +25,7 @@ export function JsonLd() {
           "AI tools assessment",
         ],
         founder: { "@id": founderId },
-        sameAs: ["https://www.linkedin.com/in/shang-hoshyar-1a08b73b5/"],
+        sameAs: ["https://www.linkedin.com/in/shang-hoshyar-ahmed-1a08b73b5/"],
       },
       {
         "@type": "Person",
@@ -35,7 +35,7 @@ export function JsonLd() {
         worksFor: { "@id": organizationId },
         url: `${site.url}/about`,
         sameAs: [
-          "https://www.linkedin.com/in/shang-hoshyar-1a08b73b5/",
+          "https://www.linkedin.com/in/shang-hoshyar-ahmed-1a08b73b5/",
           "https://solicitornews.co.uk/ai-client-confidentiality-privilege-sra/",
         ],
         knowsAbout: [
