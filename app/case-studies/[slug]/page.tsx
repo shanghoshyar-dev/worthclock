@@ -36,14 +36,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const study = getCaseStudy(slug);
   if (!study) return {};
 
+  const description = study.metaDescription ?? study.description;
+
   return {
     title: study.title,
-    description: study.description,
+    description,
     openGraph: {
       title: study.title,
-      description: study.description,
+      description,
       type: "article",
       publishedTime: study.date,
+      modifiedTime: study.dateModified ?? study.date,
       url: `${site.url}/case-studies/${study.slug}`,
     },
   };

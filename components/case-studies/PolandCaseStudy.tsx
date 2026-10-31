@@ -6,13 +6,20 @@ import {
   ArticleSection,
   QuickAnswer,
   RelatedReading,
-  blogInlineLinkClass,
 } from "@/components/blog/ArticleLayout";
 
 export const polandCaseStudyFaqs: CaseStudyFaq[] = [
   {
     q: "How long did it take to see results?",
-    a: "The changes were introduced right after the assessment, and the time savings were measured over the following weeks.",
+    a: "The new setup was running within a couple of days of starting implementation.",
+  },
+  {
+    q: "How was the 6 hours measured?",
+    a: "It is the firm's own estimate of time spent on emails and case reviews before and after the changes, not a figure from time tracking software.",
+  },
+  {
+    q: "Did the firm need help setting it up?",
+    a: "The firm set it up on its own. It found implementation the hardest part and said it wishes it had taken implementation support too.",
   },
   {
     q: "Does this only work for firms of this size?",
@@ -30,7 +37,7 @@ export function PolandCaseStudy() {
       <QuickAnswer>
         <p>
           A 17 person law firm in Poland saves an average of 6 hours per week
-          after a WorthClock AI Tools Assessment. The firm made two changes. It
+          after a Worthclock AI Tools Assessment. The firm made two changes. It
           automated routine email handling, and it started using an AI tool that
           reads through case files, highlights the important parts and summarises
           them. A lawyer still reviews every summary before relying on it.
@@ -44,15 +51,8 @@ export function PolandCaseStudy() {
           lawyers away from the work that actually needed them.
         </p>
         <p>
-          This is a common pattern. Most firms do not lose time on the legal work
-          itself. They lose it on everything around it, the same kind of{" "}
-          <Link
-            href="/blog/how-many-hours-per-week-does-ai-really-save-a-lawyer"
-            className={blogInlineLinkClass}
-          >
-            individual time sinks
-          </Link>{" "}
-          that rarely show up as a firm level result until someone maps them.
+          This is a common pattern. Most firms do not lose time on the legal
+          work itself. They lose it on everything around it.
         </p>
       </ArticleSection>
 
@@ -80,15 +80,8 @@ export function PolandCaseStudy() {
 
       <ArticleSection title="What Changed">
         <p>
-          The firm made two focused changes instead of rolling out a long list of
-          tools, which is the opposite of buying first and measuring later, see{" "}
-          <Link
-            href="/blog/how-to-measure-whether-ai-is-actually-saving-your-law-firm-time"
-            className={blogInlineLinkClass}
-          >
-            how to measure whether AI is actually saving time
-          </Link>
-          .
+          The firm made two focused changes instead of rolling out a long list
+          of tools.
         </p>
         <h3 className="font-display text-xl tracking-tight text-ink">
           Automated email handling
@@ -105,28 +98,40 @@ export function PolandCaseStudy() {
           Case reviews now start with an AI tool that reads through the case,
           highlights the important parts and summarises everything. A lawyer
           reviews the summary before relying on it, so nothing leaves the firm
-          unchecked. The same first pass, human review pattern that shows up in{" "}
-          <Link
-            href="/blog/ai-contract-review-how-much-time-can-it-actually-save"
-            className={blogInlineLinkClass}
-          >
-            AI contract review
-          </Link>
-          .
+          unchecked.
+        </p>
+      </ArticleSection>
+
+      <ArticleSection title="How Long Did It Take?">
+        <p>
+          The new setup was up and running within a couple of days. The firm
+          said the implementation itself was the hardest part, and that in
+          hindsight it wishes it had taken Worthclock&apos;s implementation
+          support as well, rather than setting everything up on its own. Once in
+          place, the setup has worked without further changes.
         </p>
       </ArticleSection>
 
       <ArticleSection title="The Result">
         <p>
-          The firm now saves an average of 6 hours per week, mainly on email
-          handling and case reviews.
+          The firm now saves around <strong>6 hours per week</strong>, mainly on
+          email handling and case reviews.
+        </p>
+      </ArticleSection>
+
+      <ArticleSection title="How Was the Time Saving Measured?">
+        <p>
+          The figure of around 6 hours per week is the firm&apos;s own estimate,
+          based on the time its people spent on emails and case reviews before
+          and after the changes. It was not measured with time tracking
+          software. We share it as the firm reported it.
         </p>
         <blockquote className="mt-2 border-l-2 border-copper pl-5 text-[1.05rem] leading-relaxed text-ink-soft">
           <p>
             &ldquo;Emails and case reviews were taking up most of our week. Now
             our emails are handled automatically and the case review tool pulls
-            out what matters and summarises it for us. We save around six hours a
-            week.&rdquo;
+            out what matters and summarises it for us. We save around six hours
+            a week.&rdquo;
           </p>
           <footer className="mt-3 text-sm text-muted">
             Managing partner, 17 person law firm in Poland
@@ -139,14 +144,7 @@ export function PolandCaseStudy() {
           <li>
             <strong>Start with where the time goes, not with the tool.</strong>{" "}
             The firm did not need more software. It needed to know which two
-            tasks were costing the most, the core of a real{" "}
-            <Link
-              href="/blog/does-your-law-firm-have-an-ai-strategy"
-              className={blogInlineLinkClass}
-            >
-              AI strategy
-            </Link>
-            .
+            tasks were costing the most.
           </li>
           <li>
             <strong>Two changes can be enough.</strong> Focusing on the biggest
@@ -156,6 +154,11 @@ export function PolandCaseStudy() {
           <li>
             <strong>Keep a review step.</strong> AI handles the first pass. A
             lawyer still checks the output before it is used.
+          </li>
+          <li>
+            <strong>Plan for implementation.</strong> Choosing the right tools
+            is half the job. Setting them up properly is the part firms most
+            often underestimate.
           </li>
         </ul>
       </ArticleSection>
@@ -180,8 +183,8 @@ export function PolandCaseStudy() {
           <Link href="/" className="underline underline-offset-4">
             AI Tools Assessment
           </Link>{" "}
-          maps that in a single call, and we guarantee at least 5 hours saved per
-          week.
+          maps that in a single call, and we guarantee at least 5 hours saved
+          per week.
         </p>
       </ArticleCta>
     </>

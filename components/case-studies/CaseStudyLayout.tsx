@@ -20,9 +20,9 @@ export function CaseStudyShell({
       {
         "@type": "Article",
         headline: study.title,
-        description: study.description,
+        description: study.metaDescription ?? study.description,
         datePublished: study.date,
-        dateModified: study.date,
+        dateModified: study.dateModified ?? study.date,
         author: { "@id": `${site.url}/#founder` },
         publisher: { "@id": `${site.url}/#organization` },
         mainEntityOfPage: {
