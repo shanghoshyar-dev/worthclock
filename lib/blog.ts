@@ -15,6 +15,16 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams",
+    title:
+      "Can Law Firms Put Client Data Into Microsoft Copilot, Outlook and Teams?",
+    description:
+      "Can a law firm use Microsoft 365 Copilot with client data? What Microsoft's terms cover, where the gaps are and what to check first.",
+    date: "2026-10-31",
+    dateLabel: "31 October 2026",
+    readingMinutes: 8,
+  },
+  {
     slug: "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features",
     title:
       "The AI Your Law Firm Never Chose: How to Check Built-In AI Features",
@@ -207,9 +217,14 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
-  "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features": [
+  "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams": [
+    "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features",
     "is-it-safe-to-use-ai-with-privileged-client-information",
-    "does-your-law-firm-have-an-ai-strategy",
+    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
+  ],
+  "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features": [
+    "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams",
+    "is-it-safe-to-use-ai-with-privileged-client-information",
     "5-questions-to-ask-before-adopting-any-legal-ai-tool",
   ],
   "does-the-eu-ai-act-require-ai-training-for-law-firms-what-article-4-means-in-2026":
@@ -294,13 +309,13 @@ export const relatedBySlug: Record<string, readonly string[]> = {
     "will-ai-insurance-underwriters-ask-about-your-firms-ai-use",
   ],
   "is-it-safe-to-use-ai-with-privileged-client-information": [
+    "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams",
     "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features",
     "5-questions-to-ask-before-adopting-any-legal-ai-tool",
-    "ai-hallucinations-in-legal-filings",
   ],
   "does-your-law-firm-have-an-ai-strategy": [
+    "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams",
     "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features",
-    "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
     "is-it-safe-to-use-ai-with-privileged-client-information",
   ],
   "ai-hallucinations-in-legal-filings": [

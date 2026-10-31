@@ -19,6 +19,10 @@ import {
   builtInAiFeaturesFaqs,
 } from "@/components/blog/BuiltInAiFeaturesArticle";
 import {
+  MicrosoftCopilotClientDataArticle,
+  microsoftCopilotClientDataFaqs,
+} from "@/components/blog/MicrosoftCopilotClientDataArticle";
+import {
   ClientsUsingAiArticle,
   clientsUsingAiFaqs,
 } from "@/components/blog/ClientsUsingAiArticle";
@@ -93,6 +97,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams": {
+    faqs: microsoftCopilotClientDataFaqs,
+    Content: MicrosoftCopilotClientDataArticle,
+  },
   "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features": {
     faqs: builtInAiFeaturesFaqs,
     Content: BuiltInAiFeaturesArticle,
