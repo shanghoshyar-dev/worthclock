@@ -199,7 +199,7 @@ export default function HomePage() {
               <h3 className="font-display mt-3 text-3xl tracking-tight text-ink sm:text-4xl">
                 Implementation Support
               </h3>
-              <p className="mt-2 text-muted">Quoted individually</p>
+              <p className="mt-2 text-muted">From €1,490</p>
               <div className="mt-8 flex flex-1 flex-col gap-4 border-t border-line pt-8 text-[1.02rem] leading-relaxed text-ink-soft">
                 <p>
                   Your report tells you what to adopt. If you&apos;d rather have
@@ -212,9 +212,10 @@ export default function HomePage() {
                   yourself.
                 </p>
                 <p>
-                  Pricing depends on scope, so every implementation is quoted
-                  individually after we understand exactly what&apos;s needed,
-                  typically discussed on a short call.
+                  Pricing starts from €1,490 and depends on scope, so every
+                  implementation is quoted individually after we understand
+                  exactly what&apos;s needed, typically discussed on a short
+                  call.
                 </p>
               </div>
               <a
