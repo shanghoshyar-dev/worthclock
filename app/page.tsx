@@ -2,8 +2,9 @@ import { ButtonLink } from "@/components/Button";
 import { Faq } from "@/components/Faq";
 import { HashScroll } from "@/components/HashScroll";
 import { HomeJsonLd } from "@/components/HomeJsonLd";
-import { featuredArticles } from "@/lib/featured";
+import { featuredByPublication } from "@/lib/featured";
 import { discretionExamples, pricingIncludes, site, steps } from "@/lib/site";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -114,22 +115,34 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-14">
           <p className="eyebrow text-brass">Featured in</p>
           <ul className="mt-5 space-y-6">
-            {featuredArticles.map((article) => (
-              <li key={article.id}>
+            {featuredByPublication().map((group) => (
+              <li key={group.publication}>
                 <p className="font-display text-2xl tracking-tight text-ink sm:text-3xl">
-                  {article.publication}
+                  {group.publication}
                 </p>
-                <a
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-block max-w-2xl text-[1.05rem] leading-relaxed text-ink-soft underline underline-offset-4 transition-colors hover:text-ink"
-                >
-                  {article.title}
-                </a>
+                <ul className="mt-2 space-y-2">
+                  {group.articles.map((article) => (
+                    <li key={article.id}>
+                      <a
+                        href={article.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block max-w-2xl text-[1.05rem] leading-relaxed text-ink-soft underline underline-offset-4 transition-colors hover:text-ink"
+                      >
+                        {article.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ul>
+          <Link
+            href="/featured"
+            className="mt-5 inline-block text-sm font-semibold text-copper hover:text-copper-hover"
+          >
+            See all articles
+          </Link>
         </div>
       </section>
 

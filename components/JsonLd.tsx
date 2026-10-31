@@ -36,6 +36,7 @@ export function JsonLd() {
         url: `${site.url}/about`,
         sameAs: [
           "https://www.linkedin.com/in/shang-hoshyar-ahmed-1a08b73b5/",
+          "https://solicitornews.co.uk/ai-due-diligence/",
           "https://solicitornews.co.uk/ai-client-confidentiality-privilege-sra/",
         ],
         knowsAbout: [
