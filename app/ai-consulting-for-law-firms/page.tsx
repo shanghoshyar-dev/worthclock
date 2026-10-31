@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "Do you implement the tools for us?",
-    a: "The assessment gives you a clear, prioritised plan. Many firms can act on it themselves. If you want help with implementation, we can discuss that after the assessment.",
+    a: "Yes. After the assessment we can set up the recommended tools for you, configure them safely for client data and train your team. Implementation starts from €1,490 per workflow, and you'll get a fixed quote right after your assessment. Software licences are not included.",
   },
   {
     q: "What if we don't save 5 hours a week?",
@@ -94,11 +94,21 @@ export default function AiConsultingForLawFirmsPage() {
         provider: { "@id": `${site.url}/#organization` },
         areaServed: "European Union",
         serviceType: "AI consulting for law firms",
-        offers: {
-          "@type": "Offer",
-          price: "999",
-          priceCurrency: "EUR",
-        },
+        offers: [
+          {
+            "@type": "Offer",
+            price: "999",
+            priceCurrency: "EUR",
+          },
+          {
+            "@type": "Offer",
+            name: "AI Implementation for Law Firms",
+            price: "1490",
+            priceCurrency: "EUR",
+            description:
+              "Implementation of recommended AI tools, from €1,490 per workflow",
+          },
+        ],
       },
       {
         "@type": "FAQPage",
@@ -199,6 +209,19 @@ export default function AiConsultingForLawFirmsPage() {
           at least 5 hours per week within 30 days of following the plan, you
           get your money back. There are no hourly rates, retainers or surprise
           invoices.
+        </p>
+      </section>
+
+      <section className="mt-14">
+        <h2 className="font-display text-3xl tracking-tight">
+          Can you help us implement the tools?
+        </h2>
+        <p className="mt-5 text-[1.05rem] leading-relaxed text-ink-soft">
+          Yes. Many firms find implementation the hardest part. We set up the
+          recommended tools, configure them safely for client data, train your
+          team and follow up after 30 days to measure the time saved.
+          Implementation starts from €1,490 per workflow, with a fixed quote
+          after your assessment.
         </p>
       </section>
 

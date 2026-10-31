@@ -178,6 +178,10 @@ export default function HomePage() {
                 {site.price}
               </p>
               <p className="mt-2 text-muted">One-time assessment fee</p>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                Need help putting it in place? Implementation from €1,490 per
+                workflow.
+              </p>
               <ul className="mt-8 flex flex-1 flex-col gap-3 border-t border-line pt-8">
                 {pricingIncludes.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-ink-soft">
