@@ -15,13 +15,22 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "how-to-choose-an-ai-consultant-for-your-law-firm",
+    title: "How to Choose an AI Consultant for Your Law Firm",
+    description:
+      "How to choose the right AI consultant for your law firm: the four types of provider, when each fits, what to ask and what it should cost.",
+    date: "2026-10-31",
+    dateLabel: "31 October 2026",
+    readingMinutes: 8,
+  },
+  {
     slug: "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams",
     title:
       "Can Law Firms Put Client Data Into Microsoft Copilot, Outlook and Teams?",
     description:
       "Can a law firm use Microsoft 365 Copilot with client data? What Microsoft's terms cover, where the gaps are and what to check first.",
-    date: "2026-10-31",
-    dateLabel: "31 October 2026",
+    date: "2026-10-29",
+    dateLabel: "29 October 2026",
     readingMinutes: 8,
   },
   {
@@ -217,6 +226,11 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
+  "how-to-choose-an-ai-consultant-for-your-law-firm": [
+    "does-your-law-firm-have-an-ai-strategy",
+    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
+    "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
+  ],
   "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams": [
     "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features",
     "is-it-safe-to-use-ai-with-privileged-client-information",
@@ -314,9 +328,9 @@ export const relatedBySlug: Record<string, readonly string[]> = {
     "5-questions-to-ask-before-adopting-any-legal-ai-tool",
   ],
   "does-your-law-firm-have-an-ai-strategy": [
+    "how-to-choose-an-ai-consultant-for-your-law-firm",
     "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams",
-    "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features",
-    "is-it-safe-to-use-ai-with-privileged-client-information",
+    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
   ],
   "ai-hallucinations-in-legal-filings": [
     "ai-legal-research-how-much-time-are-firms-actually-saving",
