@@ -30,6 +30,12 @@ export default function HomePage() {
             <ButtonLink href="/book" variant="on-dark">
               Book Your Assessment
             </ButtonLink>
+            <Link
+              href="/ai-consulting-for-law-firms"
+              className="text-sm text-cream/70 underline underline-offset-4 transition-colors hover:text-cream"
+            >
+              AI consulting for law firms
+            </Link>
             <p className="text-sm text-cream/55">
               Based in Sweden. Working with EU law firms. GDPR-first.
             </p>

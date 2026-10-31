@@ -20,6 +20,7 @@ export const site = {
 } as const;
 
 export const nav = [
+  { href: "/ai-consulting-for-law-firms", label: "For Law Firms" },
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#pricing", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },

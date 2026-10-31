@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog",
     "/case-studies",
     "/featured",
+    "/ai-consulting-for-law-firms",
     "/ai-readiness-check",
     "/privacy",
     "/terms",
