@@ -19,6 +19,10 @@ import {
   builtInAiFeaturesFaqs,
 } from "@/components/blog/BuiltInAiFeaturesArticle";
 import {
+  AiLabsConsultantsArticle,
+  aiLabsConsultantsFaqs,
+} from "@/components/blog/AiLabsConsultantsArticle";
+import {
   ChooseAiConsultantArticle,
   chooseAiConsultantFaqs,
 } from "@/components/blog/ChooseAiConsultantArticle";
@@ -101,6 +105,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "ai-labs-are-becoming-consultants-what-does-that-mean-for-law-firms": {
+    faqs: aiLabsConsultantsFaqs,
+    Content: AiLabsConsultantsArticle,
+  },
   "how-to-choose-an-ai-consultant-for-your-law-firm": {
     faqs: chooseAiConsultantFaqs,
     Content: ChooseAiConsultantArticle,

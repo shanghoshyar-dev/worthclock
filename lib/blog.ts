@@ -15,6 +15,16 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "ai-labs-are-becoming-consultants-what-does-that-mean-for-law-firms",
+    title:
+      "AI Labs Are Becoming Consultants. What Does That Mean for Law Firms?",
+    description:
+      "OpenAI and Anthropic now sell AI services directly. What that means for law firms choosing AI advice, and why independence matters.",
+    date: "2026-11-04",
+    dateLabel: "4 November 2026",
+    readingMinutes: 7,
+  },
+  {
     slug: "how-to-choose-an-ai-consultant-for-your-law-firm",
     title: "How to Choose an AI Consultant for Your Law Firm",
     description:
@@ -226,10 +236,15 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
+  "ai-labs-are-becoming-consultants-what-does-that-mean-for-law-firms": [
+    "how-to-choose-an-ai-consultant-for-your-law-firm",
+    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
+    "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams",
+  ],
   "how-to-choose-an-ai-consultant-for-your-law-firm": [
+    "ai-labs-are-becoming-consultants-what-does-that-mean-for-law-firms",
     "does-your-law-firm-have-an-ai-strategy",
     "5-questions-to-ask-before-adopting-any-legal-ai-tool",
-    "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
   ],
   "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams": [
     "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features",
