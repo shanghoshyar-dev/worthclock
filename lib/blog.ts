@@ -9,8 +9,12 @@ export type BlogPost = {
   description: string;
   /** ISO date (YYYY-MM-DD). Use the real publish day going forward. */
   date: string;
+  /** ISO date when the post was last updated; used for sitemap lastmod. */
+  dateModified?: string;
   dateLabel: string;
   readingMinutes: number;
+  /** When true, the post is omitted from the sitemap and public listings. */
+  draft?: boolean;
 };
 
 export const posts: BlogPost[] = [
