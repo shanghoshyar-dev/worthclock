@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalLayout, LegalSection } from "@/components/Legal";
+import { withCanonical } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/terms", {
   title: "Terms of Service",
   description: "Terms governing the WorthClock AI Tools Assessment.",
-};
+});
 
 export default function TermsPage() {
   return (

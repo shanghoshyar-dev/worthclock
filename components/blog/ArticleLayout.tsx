@@ -168,7 +168,7 @@ export function MiniAuditCtaBox() {
         Take the free 3 minute Mini Audit and see where AI could save your firm
         the most time.
       </p>
-      <ButtonLink href="/ai-readiness-check" variant="secondary" className="mt-5">
+      <ButtonLink href="/mini-audit" variant="secondary" className="mt-5">
         Take the Mini Audit
       </ButtonLink>
     </aside>

@@ -1,11 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  trailingSlash: false,
+  skipTrailingSlashRedirect: true,
   async redirects() {
     return [
       {
-        source: "/mini-audit",
-        destination: "/ai-readiness-check",
+        source: "/ai-readiness-check",
+        destination: "/mini-audit",
         permanent: true,
       },
       {

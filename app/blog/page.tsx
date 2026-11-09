@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { posts } from "@/lib/blog";
+import { withCanonical } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/blog", {
   title: "Blog",
   description:
     "Practical notes on AI tools for EU law firms: hallucinations, GDPR, workflows, and what is actually worth adopting.",
-};
+});
 
 export default function BlogPage() {
   return (

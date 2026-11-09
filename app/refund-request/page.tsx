@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { withCanonical } from "@/lib/seo";
 import { RefundForm } from "./RefundForm";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/refund-request", {
   title: "Request a Refund",
   description:
     "Request a refund under the WorthClock 5-hour guarantee. No login required.",
   robots: { index: false, follow: false },
-};
+});
 
 export default function RefundRequestPage() {
   return (

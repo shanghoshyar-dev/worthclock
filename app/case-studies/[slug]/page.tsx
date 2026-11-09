@@ -11,7 +11,7 @@ import {
   getCaseStudy,
   type CaseStudyFaq,
 } from "@/lib/case-studies";
-import { site } from "@/lib/site";
+import { canonicalUrl } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -37,17 +37,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!study) return {};
 
   const description = study.metaDescription ?? study.description;
+  const url = canonicalUrl(`/case-studies/${study.slug}`);
 
   return {
     title: study.title,
     description,
+    alternates: { canonical: url },
     openGraph: {
       title: study.title,
       description,
       type: "article",
       publishedTime: study.date,
       modifiedTime: study.dateModified ?? study.date,
-      url: `${site.url}/case-studies/${study.slug}`,
+      url,
     },
   };
 }

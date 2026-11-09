@@ -72,7 +72,7 @@ export function Header() {
             />
           ))}
           <Link
-            href="/ai-readiness-check"
+            href="/mini-audit"
             className="rounded-md border border-copper px-2.5 py-1 text-sm text-ink-soft transition-colors hover:text-ink"
           >
             Mini Audit
@@ -129,7 +129,7 @@ export function Header() {
               />
             ))}
             <Link
-              href="/ai-readiness-check"
+              href="/mini-audit"
               className="inline-flex w-fit rounded-md border border-copper px-2.5 py-1 text-ink-soft"
               onClick={() => setOpen(false)}
             >

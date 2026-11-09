@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Faq } from "@/components/Faq";
 import { ButtonLink } from "@/components/Button";
+import { withCanonical } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/faq", {
   title: "FAQ",
   description:
     "Frequently asked questions about WorthClock AI Tools Assessment for EU law firms: pricing, GDPR, confidentiality, and how it works.",
-};
+});
 
 export default function FaqPage() {
   return (

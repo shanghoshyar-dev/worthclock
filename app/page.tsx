@@ -1,10 +1,14 @@
+import type { Metadata } from "next";
 import { ButtonLink } from "@/components/Button";
 import { Faq } from "@/components/Faq";
 import { HashScroll } from "@/components/HashScroll";
 import { HomeJsonLd } from "@/components/HomeJsonLd";
 import { featuredByPublication } from "@/lib/featured";
+import { withCanonical } from "@/lib/seo";
 import { discretionExamples, pricingIncludes, site, steps } from "@/lib/site";
 import Link from "next/link";
+
+export const metadata: Metadata = withCanonical("/");
 
 export default function HomePage() {
   return (

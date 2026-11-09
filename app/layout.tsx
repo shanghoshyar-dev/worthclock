@@ -6,6 +6,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { CANONICAL_ORIGIN } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -19,7 +20,7 @@ const display = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(CANONICAL_ORIGIN),
   title: {
     default: `${site.name}: AI Tools Assessment for EU Law Firms`,
     template: `%s | ${site.name}`,

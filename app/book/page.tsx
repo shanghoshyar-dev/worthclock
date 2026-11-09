@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { CalEmbed } from "@/components/CalEmbed";
+import { withCanonical } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/book", {
   title: "Book Your Assessment",
   description: `Pick a time for your WorthClock AI Tools Assessment. Payment of ${site.price} is collected when you confirm your slot.`,
-};
+});
 
 export default function BookPage() {
   return (

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { ButtonLink } from "@/components/Button";
+import { withCanonical } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/about", {
   title: "About",
   description:
     "Meet Shang, founder of WorthClock. AI tools assessment for EU law firms, built by someone who implements systems, not just recommends them.",
-};
+});
 
 export default function AboutPage() {
   return (

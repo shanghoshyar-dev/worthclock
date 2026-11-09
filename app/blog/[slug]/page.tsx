@@ -95,7 +95,7 @@ import {
   strategyFaqs,
 } from "@/components/blog/StrategyArticle";
 import { getPost, posts, type BlogFaq } from "@/lib/blog";
-import { site } from "@/lib/site";
+import { canonicalUrl } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -209,15 +209,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPost(slug);
   if (!post) return {};
 
+  const url = canonicalUrl(`/blog/${post.slug}`);
+
   return {
     title: post.title,
     description: post.description,
+    alternates: { canonical: url },
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
       publishedTime: post.date,
-      url: `${site.url}/blog/${post.slug}`,
+      url,
     },
   };
 }

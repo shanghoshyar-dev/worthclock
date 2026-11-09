@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { LegalLayout, LegalSection } from "@/components/Legal";
+import { withCanonical } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/privacy", {
   title: "Privacy Policy",
   description: "How WorthClock collects, uses, and retains your data.",
-};
+});
 
 export default function PrivacyPage() {
   return (

@@ -1,7 +1,9 @@
+import { CANONICAL_ORIGIN } from "@/lib/seo";
+
 export const site = {
   name: "WorthClock",
   entity: "WorthClock: AI Tools Assessment for EU Law Firms",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://worthclock.com",
+  url: CANONICAL_ORIGIN,
   email: "info@worthclock.com",
   phone: "+46731474731",
   phoneDisplay: "+46 731 474 731",

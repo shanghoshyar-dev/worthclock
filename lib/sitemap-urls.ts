@@ -17,7 +17,6 @@ const staticPaths = [
   "/case-studies",
   "/featured",
   "/mini-audit",
-  "/ai-readiness-check",
   "/faq",
   "/book",
   "/privacy",

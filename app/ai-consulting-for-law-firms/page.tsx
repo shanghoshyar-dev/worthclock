@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ButtonLink } from "@/components/Button";
 import { featuredArticles } from "@/lib/featured";
+import { withCanonical } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/ai-consulting-for-law-firms", {
   title: {
     absolute: "AI Consulting for Law Firms in Europe | Worthclock",
   },
   description:
     "Practical AI consulting for small and midsize European law firms. Fixed price assessment, GDPR conscious, at least 5 hours saved per week or your money back.",
-};
+});
 
 const faqs = [
   {
@@ -142,7 +143,7 @@ export default function AiConsultingForLawFirmsPage() {
       </p>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
         <ButtonLink href="/book">Book Your Assessment</ButtonLink>
-        <ButtonLink href="/ai-readiness-check" variant="secondary">
+        <ButtonLink href="/mini-audit" variant="secondary">
           Take the free Mini Audit
         </ButtonLink>
       </div>
@@ -335,7 +336,7 @@ export default function AiConsultingForLawFirmsPage() {
         <p className="mt-6 text-[1.05rem] leading-relaxed text-ink-soft">
           Not ready yet?{" "}
           <Link
-            href="/ai-readiness-check"
+            href="/mini-audit"
             className="font-semibold text-copper underline underline-offset-4 hover:text-copper-hover"
           >
             Take the free 3 minute Mini Audit

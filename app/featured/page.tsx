@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { featuredArticles } from "@/lib/featured";
+import { withCanonical } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/featured", {
   title: "Featured articles",
   description:
     "Articles I've written for legal industry publications on how law firms can use AI safely.",
-};
+});
 
 export default function FeaturedPage() {
   return (

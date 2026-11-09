@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { caseStudies } from "@/lib/case-studies";
+import { withCanonical } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonical("/case-studies", {
   title: "Case Studies",
   description:
     "Real results from WorthClock AI Tools Assessments for EU law firms: where the hours went, what changed, and what was saved.",
-};
+});
 
 export default function CaseStudiesPage() {
   return (
