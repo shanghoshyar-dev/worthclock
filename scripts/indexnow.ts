@@ -109,8 +109,9 @@ async function main() {
     return;
   }
 
-  console.error("IndexNow: request did not succeed (expected 200 or 202)");
-  process.exitCode = 1;
+  console.error(
+    "IndexNow: request did not succeed (expected 200 or 202). Deploy continues.",
+  );
 }
 
 main().catch((err) => {
