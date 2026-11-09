@@ -23,7 +23,7 @@ export function BlogArticleShell({
       headline: post.title,
       description: post.description,
       datePublished: post.date,
-      dateModified: post.date,
+      dateModified: post.dateModified ?? post.date,
       author: { "@id": `${site.url}/#founder` },
       publisher: { "@id": `${site.url}/#organization` },
       mainEntityOfPage: {

@@ -13,11 +13,24 @@ export type BlogPost = {
   dateModified?: string;
   dateLabel: string;
   readingMinutes: number;
+  /** Document title when it should differ from the on-page headline. */
+  metaTitle?: string;
   /** When true, the post is omitted from the sitemap and public listings. */
   draft?: boolean;
 };
 
 export const posts: BlogPost[] = [
+  {
+    slug: "ai-policy-small-law-firm",
+    title: "What Should an AI Policy for a Small Law Firm Actually Say?",
+    metaTitle: "What Should a Small Law Firm's AI Policy Say? | Worthclock",
+    description:
+      "What a small law firm's AI policy needs to cover, in plain terms: approved tools, client data, review, consent, training and ownership.",
+    date: "2026-11-09",
+    dateModified: "2026-11-09",
+    dateLabel: "9 November 2026",
+    readingMinutes: 8,
+  },
   {
     slug: "ai-labs-are-becoming-consultants-what-does-that-mean-for-law-firms",
     title:
@@ -240,6 +253,11 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
+  "ai-policy-small-law-firm": [
+    "does-your-law-firm-have-an-ai-strategy",
+    "does-the-eu-ai-act-require-ai-training-for-law-firms-what-article-4-means-in-2026",
+    "5-questions-to-ask-before-adopting-any-legal-ai-tool",
+  ],
   "ai-labs-are-becoming-consultants-what-does-that-mean-for-law-firms": [
     "how-to-choose-an-ai-consultant-for-your-law-firm",
     "5-questions-to-ask-before-adopting-any-legal-ai-tool",

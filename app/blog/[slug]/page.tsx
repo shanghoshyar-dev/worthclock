@@ -19,6 +19,10 @@ import {
   builtInAiFeaturesFaqs,
 } from "@/components/blog/BuiltInAiFeaturesArticle";
 import {
+  AiPolicyArticle,
+  aiPolicyFaqs,
+} from "@/components/blog/AiPolicyArticle";
+import {
   AiLabsConsultantsArticle,
   aiLabsConsultantsFaqs,
 } from "@/components/blog/AiLabsConsultantsArticle";
@@ -105,6 +109,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "ai-policy-small-law-firm": {
+    faqs: aiPolicyFaqs,
+    Content: AiPolicyArticle,
+  },
   "ai-labs-are-becoming-consultants-what-does-that-mean-for-law-firms": {
     faqs: aiLabsConsultantsFaqs,
     Content: AiLabsConsultantsArticle,
@@ -212,7 +220,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = canonicalUrl(`/blog/${post.slug}`);
 
   return {
-    title: post.title,
+    title: post.metaTitle ? { absolute: post.metaTitle } : post.title,
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
