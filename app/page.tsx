@@ -237,6 +237,87 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+          <h2 className="font-display max-w-3xl text-3xl leading-tight tracking-tight sm:text-4xl">
+            How do you handle our client data?
+          </h2>
+          <div className="mt-6 max-w-2xl space-y-4 text-lg leading-relaxed text-ink-soft">
+            <p>
+              You don&apos;t need to share any client data with us. The
+              assessment is about how your firm works, not what is in your
+              files. We talk through your workflows, tools and where time goes,
+              and nothing confidential is needed for that.
+            </p>
+            <p>When we recommend a tool, we check it before it reaches you:</p>
+          </div>
+          <ol className="mt-6 max-w-2xl list-decimal space-y-3 pl-5 text-[1.05rem] leading-relaxed text-ink-soft">
+            <li>
+              <strong className="text-ink">Data processing terms.</strong> Does
+              the provider act as a processor under a proper contract?
+            </li>
+            <li>
+              <strong className="text-ink">Training.</strong> Are your inputs
+              used to train the provider&apos;s models?
+            </li>
+            <li>
+              <strong className="text-ink">Retention.</strong> How long is your
+              data kept?
+            </li>
+            <li>
+              <strong className="text-ink">Location.</strong> Where is your data
+              processed and stored?
+            </li>
+            <li>
+              <strong className="text-ink">Access.</strong> Who at the provider
+              can see it?
+            </li>
+          </ol>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            Every recommendation in your plan comes with these notes, so you can
+            make the final decision with the full picture.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-t border-line">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
+          <h2 className="font-display max-w-3xl text-3xl leading-tight tracking-tight sm:text-4xl">
+            Who is behind Worthclock?
+          </h2>
+          <div className="mt-6 max-w-2xl space-y-4 text-lg leading-relaxed text-ink-soft">
+            <p>
+              Worthclock is run by Shang Ahmed, based in Sweden. Shang writes
+              about AI, confidentiality and privilege for legal publications,
+              including Solicitor News, and works with small and midsize law
+              firms across the EU.
+            </p>
+            <p>
+              Worthclock is independent. We don&apos;t sell software or take
+              commission from tool vendors, so every recommendation is based on
+              what fits your firm.
+            </p>
+          </div>
+          <blockquote className="mt-8 max-w-2xl border-l-2 border-brass pl-5 text-[1.05rem] leading-relaxed text-ink-soft">
+            <p>
+              &quot;Emails and case reviews were taking up most of our week. Now
+              our emails are handled automatically and the case review tool
+              pulls out what matters and summarises it for us. We save around
+              six hours a week.&quot;
+            </p>
+            <footer className="mt-3 text-sm text-muted">
+              Managing partner, 17 person law firm in Poland
+            </footer>
+          </blockquote>
+          <Link
+            href="/case-studies/poland-law-firm-6-hours"
+            className="mt-6 inline-block text-sm font-semibold text-copper hover:text-copper-hover"
+          >
+            Read the full case
+          </Link>
+        </div>
+      </section>
+
       <section id="faq" className="scroll-mt-20 border-t border-line">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
           <p className="eyebrow text-brass">FAQ</p>

@@ -90,6 +90,19 @@ export const faq = [
     q: "Do you only work with law firms?",
     a: "Law firms in the EU are our focus, but the assessment works for any company in any industry. If you're not a law firm, book anyway and we'll tailor it to your workflows.",
   },
+  {
+    q: "Do we need to share client files for the assessment?",
+    a: "No. The assessment covers your workflows and tools. No client files or confidential information are needed.",
+  },
+  {
+    q: "Is €999 worth it for a small firm?",
+    a: "The assessment comes with a guarantee of at least 5 hours saved per week within 30 days of following the plan, or your money back. If you want to see where you stand first, start with the free Mini Audit.",
+    miniAuditLink: true,
+  },
+  {
+    q: "Can the call be held in our language?",
+    a: "Calls are held in English. If you prefer, a colleague who is comfortable in English can join the call with you.",
+  },
 ] as const;
 
 export const steps = [

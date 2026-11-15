@@ -36,6 +36,23 @@ function Answer({ item }: { item: (typeof faq)[number] }) {
     );
   }
 
+  if ("miniAuditLink" in item && item.miniAuditLink) {
+    return (
+      <>
+        The assessment comes with a guarantee of at least 5 hours saved per
+        week within 30 days of following the plan, or your money back. If you
+        want to see where you stand first, start with the{" "}
+        <Link
+          href="/mini-audit"
+          className="underline decoration-brass underline-offset-4 hover:text-ink"
+        >
+          free Mini Audit
+        </Link>
+        .
+      </>
+    );
+  }
+
   return item.a as ReactNode;
 }
 

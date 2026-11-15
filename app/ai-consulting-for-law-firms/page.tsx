@@ -38,6 +38,18 @@ const faqs = [
     q: "Do you sell AI software?",
     a: "No. Worthclock is independent and does not take commissions from tool vendors.",
   },
+  {
+    q: "Do we need to share client files for the assessment?",
+    a: "No. The assessment covers your workflows and tools. No client files or confidential information are needed.",
+  },
+  {
+    q: "Is €999 worth it for a small firm?",
+    a: "The assessment comes with a guarantee of at least 5 hours saved per week within 30 days of following the plan, or your money back. If you want to see where you stand first, start with the free Mini Audit.",
+  },
+  {
+    q: "Can the call be held in our language?",
+    a: "Calls are held in English. If you prefer, a colleague who is comfortable in English can join the call with you.",
+  },
 ] as const;
 
 const reasons = [
@@ -314,13 +326,108 @@ export default function AiConsultingForLawFirmsPage() {
 
       <section className="mt-14">
         <h2 className="font-display text-3xl tracking-tight">
+          How do you handle our client data?
+        </h2>
+        <div className="mt-5 space-y-4 text-[1.05rem] leading-relaxed text-ink-soft">
+          <p>
+            You don&apos;t need to share any client data with us. The assessment
+            is about how your firm works, not what is in your files. We talk
+            through your workflows, tools and where time goes, and nothing
+            confidential is needed for that.
+          </p>
+          <p>When we recommend a tool, we check it before it reaches you:</p>
+          <ol className="list-decimal space-y-3 pl-5">
+            <li>
+              <strong className="text-ink">Data processing terms.</strong> Does
+              the provider act as a processor under a proper contract?
+            </li>
+            <li>
+              <strong className="text-ink">Training.</strong> Are your inputs
+              used to train the provider&apos;s models?
+            </li>
+            <li>
+              <strong className="text-ink">Retention.</strong> How long is your
+              data kept?
+            </li>
+            <li>
+              <strong className="text-ink">Location.</strong> Where is your data
+              processed and stored?
+            </li>
+            <li>
+              <strong className="text-ink">Access.</strong> Who at the provider
+              can see it?
+            </li>
+          </ol>
+          <p>
+            Every recommendation in your plan comes with these notes, so you can
+            make the final decision with the full picture.
+          </p>
+        </div>
+      </section>
+
+      <section className="mt-14">
+        <h2 className="font-display text-3xl tracking-tight">
+          Who is behind Worthclock?
+        </h2>
+        <div className="mt-5 space-y-4 text-[1.05rem] leading-relaxed text-ink-soft">
+          <p>
+            Worthclock is run by Shang Ahmed, based in Sweden. Shang writes
+            about AI, confidentiality and privilege for legal publications,
+            including Solicitor News, and works with small and midsize law firms
+            across the EU.
+          </p>
+          <p>
+            Worthclock is independent. We don&apos;t sell software or take
+            commission from tool vendors, so every recommendation is based on
+            what fits your firm.
+          </p>
+          <blockquote className="border-l-2 border-brass pl-5">
+            <p>
+              &quot;Emails and case reviews were taking up most of our week. Now
+              our emails are handled automatically and the case review tool
+              pulls out what matters and summarises it for us. We save around
+              six hours a week.&quot;
+            </p>
+            <footer className="mt-3 text-sm text-muted">
+              Managing partner, 17 person law firm in Poland
+            </footer>
+          </blockquote>
+          <Link
+            href="/case-studies/poland-law-firm-6-hours"
+            className="inline-block text-sm font-semibold text-copper hover:text-copper-hover"
+          >
+            Read the full case
+          </Link>
+        </div>
+      </section>
+
+      <section className="mt-14">
+        <h2 className="font-display text-3xl tracking-tight">
           Frequently asked questions
         </h2>
         <div className="mt-6 divide-y divide-line border-y border-line">
           {faqs.map((item) => (
             <div key={item.q} className="py-6">
               <h3 className="font-display text-xl tracking-tight">{item.q}</h3>
-              <p className="mt-3 leading-relaxed text-ink-soft">{item.a}</p>
+              <p className="mt-3 leading-relaxed text-ink-soft">
+                {item.q === "Is €999 worth it for a small firm?" ? (
+                  <>
+                    The assessment comes with a guarantee of at least 5 hours
+                    saved per week within 30 days of following the plan, or your
+                    money back. If you want to see where you stand first, start
+                    with the{" "}
+                    <Link
+                      href="/mini-audit"
+                      className="font-semibold text-copper underline underline-offset-4 hover:text-copper-hover"
+                    >
+                      free Mini Audit
+                    </Link>
+                    .
+                  </>
+                ) : (
+                  item.a
+                )}
+              </p>
             </div>
           ))}
         </div>
