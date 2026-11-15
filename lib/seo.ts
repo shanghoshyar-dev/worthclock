@@ -14,11 +14,22 @@ export function withCanonical(
   path: string,
   metadata: Metadata = {},
 ): Metadata {
+  const description =
+    typeof metadata.description === "string" ? metadata.description : undefined;
+
   return {
     ...metadata,
     alternates: {
       ...metadata.alternates,
       canonical: canonicalUrl(path),
     },
+    ...(description
+      ? {
+          openGraph: {
+            ...metadata.openGraph,
+            description,
+          },
+        }
+      : {}),
   };
 }

@@ -38,8 +38,7 @@ export const metadata: Metadata = {
   // Request homepage reindex in Search Console after deploy.
   openGraph: {
     title: site.entity,
-    description:
-      "Know exactly which AI tools are worth your time. One assessment, €999, guaranteed.",
+    description: site.description,
     url: site.url,
     siteName: site.name,
     locale: "en_US",

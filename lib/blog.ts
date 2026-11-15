@@ -87,7 +87,7 @@ export const posts: BlogPost[] = [
     title:
       "Does the EU AI Act Require AI Training for Law Firms? What Article 4 Means in 2026",
     description:
-      "Article 4 of the EU AI Act requires firms that use AI to support AI literacy among their staff. Here is what the obligation means for law firms after the Digital Omnibus, and how to meet it without a big training programme.",
+      "EU AI Act Article 4 training for law firms: what the AI literacy duty means in 2026, and how a small firm can meet it without a large programme.",
     date: "2026-10-20",
     dateLabel: "20 October 2026",
     readingMinutes: 6,
@@ -96,7 +96,7 @@ export const posts: BlogPost[] = [
     slug: "how-to-measure-whether-ai-is-actually-saving-your-law-firm-time",
     title: "How to Measure Whether AI Is Actually Saving Your Law Firm Time",
     description:
-      "Most legal organizations using AI cannot say whether it is working. Here is what the 2026 data shows about measuring AI ROI, and a simple way for a law firm to start.",
+      "Measure whether AI is saving your law firm time. Most teams cannot tell if it works. Here is a simple way to track the hours saved each week.",
     date: "2026-10-08",
     dateLabel: "8 October 2026",
     readingMinutes: 6,
@@ -124,7 +124,7 @@ export const posts: BlogPost[] = [
     title:
       "The EU AI Act Deadline Got Pushed Back. Here's What Still Applies Right Now.",
     description:
-      "The EU AI Act's high-risk deadline for law firms moved to December 2027, but several obligations are already active today. Here's what actually applies as of now.",
+      "The EU AI Act deadline for law firms moved to December 2027. Here is what still applies now, and which duties were not delayed.",
     date: "2026-09-21",
     dateLabel: "21 September 2026",
     readingMinutes: 6,
@@ -133,7 +133,7 @@ export const posts: BlogPost[] = [
     slug: "your-lawyers-are-already-using-ai-almost-nobody-trained-them",
     title: "Your Lawyers Are Already Using AI. Almost Nobody Trained Them.",
     description:
-      "AI use among lawyers has more than doubled in a year, but most firms still provide no training on how to use it responsibly. Here's why that gap is the real risk.",
+      "Lawyers are already using AI, and most firms never trained them. Here is why that gap is the real confidentiality risk, and how to close it.",
     date: "2026-09-13",
     dateLabel: "13 September 2026",
     readingMinutes: 5,
@@ -143,7 +143,7 @@ export const posts: BlogPost[] = [
     title:
       "Law Firms Are the Perfect Target for AI-Driven Cyberattacks. Most Don't Know It Yet.",
     description:
-      "AI-generated phishing and social engineering attacks against law firms are rising fast. Here's what's driving it, and why most firms are less prepared than they think.",
+      "AI-driven cyberattacks target law firms because client files are valuable. Here is what is rising, and why most firms are less prepared than they think.",
     date: "2026-09-06",
     dateLabel: "6 September 2026",
     readingMinutes: 6,
@@ -152,7 +152,7 @@ export const posts: BlogPost[] = [
     slug: "should-your-firm-tell-clients-when-youre-using-ai-on-their-matter",
     title: "Should Your Firm Tell Clients When You're Using AI on Their Matter?",
     description:
-      "Most clients want to know when a law firm uses AI on their case, and most firms aren't telling them. Here's what the trust gap actually costs, and how to close it.",
+      "Should your law firm tell clients when AI is used on their matter? Most clients want to know, and most firms stay quiet. Here is how to close that gap.",
     date: "2026-09-01",
     dateLabel: "1 September 2026",
     readingMinutes: 5,
@@ -170,7 +170,7 @@ export const posts: BlogPost[] = [
     slug: "ai-legal-research-how-much-time-are-firms-actually-saving",
     title: "AI Legal Research: How Much Time Are Firms Actually Saving?",
     description:
-      "Legal research is one of the biggest time sinks in a law firm. Here's what the real 2026 data shows about how much AI actually saves, and where the accuracy risk still sits.",
+      "AI legal research time savings for law firms: what the 2026 data shows about hours saved, and where the accuracy risk still sits.",
     date: "2026-08-24",
     dateLabel: "24 August 2026",
     readingMinutes: 5,
@@ -197,7 +197,7 @@ export const posts: BlogPost[] = [
     slug: "how-clients-are-already-using-ai-instead-of-calling-your-firm",
     title: "How Clients Are Already Using AI Instead of Calling Your Firm",
     description:
-      "Some clients are turning to AI before they turn to a law firm, and it often happens without the firm ever knowing. Here's what that shift means and how firms can respond.",
+      "Clients are already using AI instead of calling your law firm. Here is what that shift means, and how firms can respond before the work goes elsewhere.",
     date: "2026-08-09",
     dateLabel: "9 August 2026",
     readingMinutes: 5,
@@ -234,7 +234,7 @@ export const posts: BlogPost[] = [
     slug: "is-it-safe-to-use-ai-with-privileged-client-information",
     title: "Is It Safe to Use AI With Privileged Client Information?",
     description:
-      "Law firms are right to be cautious about AI and privileged data. Here's what the confidentiality risk actually looks like, and how to use AI without exposing client information.",
+      "Is it safe to use AI with privileged client information? Here is the confidentiality risk for law firms, and how to use AI without exposing client data.",
     date: "2026-07-24",
     dateLabel: "24 July 2026",
     readingMinutes: 5,

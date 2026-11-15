@@ -6,7 +6,8 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = withCanonical("/terms", {
   title: "Terms of Service",
-  description: "Terms governing the WorthClock AI Tools Assessment.",
+  description:
+    "Terms for the WorthClock AI Tools Assessment: the €999 fee, the 5-hour guarantee, refunds, and what the written plan does and does not cover.",
 });
 
 export default function TermsPage() {

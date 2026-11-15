@@ -10,7 +10,7 @@ export const site = {
   refundCcEmail: "shanghoshyar@gmail.com",
   location: "Sweden",
   description:
-    "In one 45-minute call, WorthClock maps your workflows and hands you a clear plan for the AI tools that will save you real hours. Guaranteed 5 hours back every week, or your money back.",
+    "Fixed price AI Tools Assessment for small and midsize EU law firms. Find safe AI tools and save at least 5 hours a week, or get your money back.",
   price: "€999",
   priceAmount: 999,
   currency: "EUR",

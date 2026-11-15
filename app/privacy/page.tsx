@@ -5,7 +5,8 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = withCanonical("/privacy", {
   title: "Privacy Policy",
-  description: "How WorthClock collects, uses, and retains your data.",
+  description:
+    "WorthClock privacy policy: what personal data the AI Tools Assessment collects, how long we keep it, and the GDPR rights you can use.",
 });
 
 export default function PrivacyPage() {
