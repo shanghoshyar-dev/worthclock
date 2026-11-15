@@ -21,6 +21,18 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "who-is-liable-ai-legal-error",
+    title:
+      "Who Is Liable When AI Gets a Legal Answer Wrong: the Lawyer, the Firm or the Vendor?",
+    metaTitle: "Who Is Liable When AI Gets Legal Advice Wrong? | Worthclock",
+    description:
+      "When AI gives a wrong legal answer, who is responsible? Why liability usually stays with the lawyer and firm, and how to protect yourself.",
+    date: "2026-11-15",
+    dateModified: "2026-11-15",
+    dateLabel: "15 November 2026",
+    readingMinutes: 8,
+  },
+  {
     slug: "ai-policy-small-law-firm",
     title: "What Should an AI Policy for a Small Law Firm Actually Say?",
     metaTitle: "What Should a Small Law Firm's AI Policy Say? | Worthclock",
@@ -253,6 +265,11 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
+  "who-is-liable-ai-legal-error": [
+    "ai-hallucinations-in-legal-filings",
+    "ai-policy-small-law-firm",
+    "will-ai-insurance-underwriters-ask-about-your-firms-ai-use",
+  ],
   "ai-policy-small-law-firm": [
     "does-your-law-firm-have-an-ai-strategy",
     "does-the-eu-ai-act-require-ai-training-for-law-firms-what-article-4-means-in-2026",

@@ -19,6 +19,10 @@ import {
   builtInAiFeaturesFaqs,
 } from "@/components/blog/BuiltInAiFeaturesArticle";
 import {
+  AiLiabilityArticle,
+  aiLiabilityFaqs,
+} from "@/components/blog/AiLiabilityArticle";
+import {
   AiPolicyArticle,
   aiPolicyFaqs,
 } from "@/components/blog/AiPolicyArticle";
@@ -109,6 +113,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "who-is-liable-ai-legal-error": {
+    faqs: aiLiabilityFaqs,
+    Content: AiLiabilityArticle,
+  },
   "ai-policy-small-law-firm": {
     faqs: aiPolicyFaqs,
     Content: AiPolicyArticle,
