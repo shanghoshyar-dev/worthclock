@@ -1,8 +1,8 @@
 import { CANONICAL_ORIGIN } from "@/lib/seo";
 
 export const site = {
-  name: "WorthClock",
-  entity: "WorthClock: AI Tools Assessment for EU Law Firms",
+  name: "Worthclock",
+  entity: "Worthclock: AI Tools Assessment for EU Law Firms",
   url: CANONICAL_ORIGIN,
   email: "info@worthclock.com",
   phone: "+46731474731",
@@ -38,8 +38,7 @@ export const faq = [
   },
   {
     q: "How do you handle client confidentiality and GDPR compliance?",
-    a: "All calls and data are handled under strict GDPR compliance. We never require access to privileged client files, our assessment is based on your workflows and tool usage, not case content.",
-    privacyLink: true,
+    a: "We never need access to client files or privileged information. The assessment is based on your workflows and the tools you use, not case content. Every tool we recommend is checked for data processing terms, whether inputs are used for training, data retention and where data is processed.",
   },
   {
     q: "What kind of tasks can AI actually help with at my firm?",
@@ -59,7 +58,7 @@ export const faq = [
   },
   {
     q: "How much time can AI actually save on contract review?",
-    a: "Legal teams typically spend around 3 hours reviewing a single contract. With the right AI tool in place, that can often be cut significantly, some firms report reducing contract review time by more than half.",
+    a: "It depends on the type of contracts and the tool. AI can speed up the first review by finding key clauses and flagging unusual terms, while a lawyer still checks the result. Your assessment estimates the time saving for your firm's actual work, and we guarantee at least 5 hours saved per week overall.",
   },
   {
     q: "Are there AI tools built specifically for EU law firms?",
@@ -68,6 +67,10 @@ export const faq = [
   {
     q: "When do I pay?",
     a: "Payment (€999) is collected when you confirm your time slot on the booking page. This secures your spot for the discovery call.",
+  },
+  {
+    q: "What if we don't save 5 hours a week?",
+    a: "If your firm does not save at least 5 hours per week within 30 days of following the plan, you get your money back.",
   },
   {
     q: "How long does the whole process take?",

@@ -4,23 +4,6 @@ import { faq } from "@/lib/site";
 
 function Answer({ item }: { item: (typeof faq)[number] }) {
   if ("privacyLink" in item && item.privacyLink) {
-    if (item.q.startsWith("How do you handle client confidentiality")) {
-      return (
-        <>
-          All calls and data are handled under strict GDPR compliance. We never
-          require access to privileged client files, our assessment is based on
-          your workflows and tool usage, not case content. See our{" "}
-          <Link
-            href="/privacy"
-            className="underline decoration-brass underline-offset-4 hover:text-ink"
-          >
-            Privacy Policy
-          </Link>{" "}
-          for full details.
-        </>
-      );
-    }
-
     return (
       <>
         Yes. Your call is used only to generate your report and is handled under

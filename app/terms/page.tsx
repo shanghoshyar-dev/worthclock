@@ -7,15 +7,15 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = withCanonical("/terms", {
   title: "Terms of Service",
   description:
-    "Terms for the WorthClock AI Tools Assessment: the €999 fee, the 5-hour guarantee, refunds, and what the written plan does and does not cover.",
+    "Terms for the Worthclock AI Tools Assessment: the €999 fee, the 5-hour guarantee, refunds, and what the written plan does and does not cover.",
 });
 
 export default function TermsPage() {
   return (
-    <LegalLayout title="WorthClock Terms of Service">
+    <LegalLayout title="Worthclock Terms of Service">
       <LegalSection title="The Service">
         <p>
-          WorthClock provides a paid AI Tools Assessment consisting of a
+          Worthclock provides a paid AI Tools Assessment consisting of a
           discovery call, AI-driven analysis, a written report, and a review
           call, for a one-time fee of {site.price}.
         </p>
@@ -71,7 +71,7 @@ export default function TermsPage() {
 
       <LegalSection title="Limitation of Liability">
         <p>
-          WorthClock provides recommendations based on the information shared
+          Worthclock provides recommendations based on the information shared
           during your discovery call. We are not liable for outcomes resulting
           from implementation decisions made independently by the client.
         </p>
@@ -83,7 +83,7 @@ export default function TermsPage() {
 
       <LegalSection title="Contact">
         <p>
-          WorthClock,{" "}
+          Worthclock,{" "}
           <a href={`mailto:${site.email}`} className="underline underline-offset-4">
             {site.email}
           </a>

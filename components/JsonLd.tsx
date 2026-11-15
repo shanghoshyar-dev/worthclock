@@ -28,6 +28,22 @@ export function JsonLd() {
         sameAs: ["https://www.linkedin.com/in/shang-hoshyar-ahmed-1a08b73b5/"],
       },
       {
+        "@type": "Service",
+        "@id": `${site.url}/#assessment`,
+        name: "AI Tools Assessment for Law Firms",
+        serviceType: "AI consulting for law firms",
+        provider: { "@id": organizationId },
+        areaServed: "European Union",
+        description:
+          "A 45 minute assessment that maps where a law firm loses time and matches it to AI tools that are safe for client data, followed by a written plan.",
+        offers: {
+          "@type": "Offer",
+          price: "999",
+          priceCurrency: "EUR",
+          url: `${site.url}/book`,
+        },
+      },
+      {
         "@type": "Person",
         "@id": founderId,
         name: "Shang Ahmed",

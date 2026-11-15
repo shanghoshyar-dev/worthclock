@@ -116,7 +116,7 @@ export async function POST(request: Request) {
 }
 
 function resendFrom() {
-  return process.env.RESEND_FROM_EMAIL ?? `WorthClock <${site.email}>`;
+  return process.env.RESEND_FROM_EMAIL ?? `Worthclock <${site.email}>`;
 }
 
 async function sendLeadNotification({
@@ -198,11 +198,11 @@ async function sendLeadConfirmation({
       from: resendFrom(),
       to: [email],
       replyTo: site.email,
-      subject: `Your WorthClock Mini Audit result: ${resultCategory}`,
+      subject: `Your Worthclock Mini Audit result: ${resultCategory}`,
       text: [
         "Hi,",
         "",
-        "Thanks for completing the WorthClock AI Readiness Mini Audit.",
+        "Thanks for completing the Worthclock AI Readiness Mini Audit.",
         "",
         `Company: ${companyName}`,
         `Your result category: ${resultCategory}`,
@@ -212,7 +212,7 @@ async function sendLeadConfirmation({
         "",
         "Questions? Reply to this email or write to info@worthclock.com.",
         "",
-        "— WorthClock",
+        "— Worthclock",
       ].join("\n"),
     });
 

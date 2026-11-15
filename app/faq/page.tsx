@@ -6,7 +6,7 @@ import { withCanonical } from "@/lib/seo";
 export const metadata: Metadata = withCanonical("/faq", {
   title: "FAQ",
   description:
-    "Frequently asked questions about WorthClock AI Tools Assessment for EU law firms: pricing, GDPR, confidentiality, and how it works.",
+    "Frequently asked questions about Worthclock AI Tools Assessment for EU law firms: pricing, GDPR, confidentiality, and how it works.",
 });
 
 export default function FaqPage() {

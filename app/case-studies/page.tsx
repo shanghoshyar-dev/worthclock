@@ -6,13 +6,13 @@ import { withCanonical } from "@/lib/seo";
 export const metadata: Metadata = withCanonical("/case-studies", {
   title: "Case Studies",
   description:
-    "Real results from WorthClock AI Tools Assessments for EU law firms: where the hours went, what changed, and what was saved.",
+    "Real results from Worthclock AI Tools Assessments for EU law firms: where the hours went, what changed, and what was saved.",
 });
 
 export default function CaseStudiesPage() {
   return (
     <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20">
-      <p className="eyebrow text-brass">WorthClock Case Studies</p>
+      <p className="eyebrow text-brass">Worthclock Case Studies</p>
       <h1 className="font-display mt-4 text-4xl leading-tight tracking-tight sm:text-5xl">
         Real results from real firms
       </h1>

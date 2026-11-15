@@ -6,12 +6,12 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = withCanonical("/privacy", {
   title: "Privacy Policy",
   description:
-    "WorthClock privacy policy: what personal data the AI Tools Assessment collects, how long we keep it, and the GDPR rights you can use.",
+    "Worthclock privacy policy: what personal data the AI Tools Assessment collects, how long we keep it, and the GDPR rights you can use.",
 });
 
 export default function PrivacyPage() {
   return (
-    <LegalLayout title="WorthClock Privacy Policy">
+    <LegalLayout title="Worthclock Privacy Policy">
       <LegalSection title="What we collect">
         <ul className="list-disc space-y-2 pl-5">
           <li>Contact information you provide when booking (name, email, company)</li>
@@ -95,7 +95,7 @@ export default function PrivacyPage() {
 
       <LegalSection title="Contact">
         <p>
-          WorthClock,{" "}
+          Worthclock,{" "}
           <a href={`mailto:${site.email}`} className="underline underline-offset-4">
             {site.email}
           </a>

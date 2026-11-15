@@ -11,7 +11,7 @@ export function Logo({ inverted = false }: { inverted?: boolean }) {
     <Link
       href="/"
       className={`inline-flex items-center gap-2.5 ${color} no-underline`}
-      aria-label="WorthClock home"
+      aria-label="Worthclock home"
       onClick={(e) => {
         if (pathname === "/") {
           e.preventDefault();
@@ -50,7 +50,7 @@ export function Logo({ inverted = false }: { inverted?: boolean }) {
         />
       </svg>
       <span className="font-display text-[1.15rem] leading-none tracking-tight">
-        WorthClock
+        Worthclock
       </span>
     </Link>
   );
