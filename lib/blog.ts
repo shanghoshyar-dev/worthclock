@@ -21,6 +21,17 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "gdpr-legal-ai-when-is-a-dpia-required",
+    title: "GDPR and Legal AI: When Is a DPIA Required?",
+    metaTitle: "GDPR and Legal AI: When Is a DPIA Required? | Worthclock",
+    description:
+      "When does a law firm need a DPIA before using AI? How the GDPR test works, what regulators say about AI and what a DPIA should cover.",
+    date: "2026-11-21",
+    dateModified: "2026-11-21",
+    dateLabel: "21 November 2026",
+    readingMinutes: 7,
+  },
+  {
     slug: "who-is-liable-ai-legal-error",
     title:
       "Who Is Liable When AI Gets a Legal Answer Wrong: the Lawyer, the Firm or the Vendor?",
@@ -265,6 +276,11 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
+  "gdpr-legal-ai-when-is-a-dpia-required": [
+    "is-it-safe-to-use-ai-with-privileged-client-information",
+    "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams",
+    "ai-policy-small-law-firm",
+  ],
   "who-is-liable-ai-legal-error": [
     "ai-hallucinations-in-legal-filings",
     "ai-policy-small-law-firm",

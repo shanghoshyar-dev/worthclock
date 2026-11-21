@@ -18,6 +18,7 @@ import {
   BuiltInAiFeaturesArticle,
   builtInAiFeaturesFaqs,
 } from "@/components/blog/BuiltInAiFeaturesArticle";
+import { DpiaArticle, dpiaFaqs } from "@/components/blog/DpiaArticle";
 import {
   AiLiabilityArticle,
   aiLiabilityFaqs,
@@ -113,6 +114,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "gdpr-legal-ai-when-is-a-dpia-required": {
+    faqs: dpiaFaqs,
+    Content: DpiaArticle,
+  },
   "who-is-liable-ai-legal-error": {
     faqs: aiLiabilityFaqs,
     Content: AiLiabilityArticle,
