@@ -3,6 +3,10 @@ import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { CaseStudyShell } from "@/components/case-studies/CaseStudyLayout";
 import {
+  DenmarkCaseStudy,
+  denmarkCaseStudyFaqs,
+} from "@/components/case-studies/DenmarkCaseStudy";
+import {
   PolandCaseStudy,
   polandCaseStudyFaqs,
 } from "@/components/case-studies/PolandCaseStudy";
@@ -21,6 +25,10 @@ const studies: Record<
   string,
   { faqs: CaseStudyFaq[]; Content: () => ReactNode }
 > = {
+  "denmark-law-firm-6-7-hours": {
+    faqs: denmarkCaseStudyFaqs,
+    Content: DenmarkCaseStudy,
+  },
   "poland-law-firm-6-hours": {
     faqs: polandCaseStudyFaqs,
     Content: PolandCaseStudy,

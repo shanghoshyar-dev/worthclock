@@ -17,6 +17,18 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: "denmark-law-firm-6-7-hours",
+    title: "How a 9 Person Law Firm in Denmark Saves 6 to 7 Hours a Week With AI",
+    description:
+      "A 9 person law firm in Denmark was losing hours to email, case reviews and invoicing, and was unsure about AI and GDPR. After one AI Tools Assessment, it saves 6 to 7 hours per week.",
+    metaDescription:
+      "How a 9 person Danish law firm saves 6 to 7 hours a week on email, case reviews and invoicing, and learned to use AI safely under GDPR.",
+    date: "2026-11-23",
+    dateModified: "2026-11-23",
+    dateLabel: "23 November 2026",
+    readingMinutes: 5,
+  },
+  {
     slug: "poland-law-firm-6-hours",
     title: "How a 17 Person Law Firm in Poland Saved 6 Hours a Week With AI",
     description:
