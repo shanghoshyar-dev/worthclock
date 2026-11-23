@@ -264,7 +264,29 @@ export default function AiConsultingForLawFirmsPage() {
           href="/case-studies/poland-law-firm-6-hours"
           className="mt-6 inline-block text-sm font-semibold text-copper hover:text-copper-hover"
         >
-          Read the full case
+          Read the Poland case
+        </Link>
+        <p className="mt-10 text-[1.05rem] leading-relaxed text-ink-soft">
+          A 9 person law firm in Denmark was losing hours to email, case reviews
+          and invoicing, and was unsure how AI fits with GDPR. After the
+          assessment, the firm brought AI into those tasks and its team learned
+          how to use it safely. It was fully up and running in about 45 days and
+          now saves 6 to 7 hours per week.
+        </p>
+        <blockquote className="mt-8 border-l-2 border-brass pl-5 text-[1.05rem] leading-relaxed text-ink-soft">
+          <p>
+            &quot;It&apos;s better to be prepared and know AI properly, so you
+            don&apos;t make a misstep.&quot;
+          </p>
+          <footer className="mt-3 text-sm text-muted">
+            9 person law firm in Denmark
+          </footer>
+        </blockquote>
+        <Link
+          href="/case-studies/denmark-law-firm-6-7-hours"
+          className="mt-6 inline-block text-sm font-semibold text-copper hover:text-copper-hover"
+        >
+          Read the Denmark case
         </Link>
       </section>
 

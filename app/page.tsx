@@ -313,7 +313,22 @@ export default function HomePage() {
             href="/case-studies/poland-law-firm-6-hours"
             className="mt-6 inline-block text-sm font-semibold text-copper hover:text-copper-hover"
           >
-            Read the full case
+            Read the Poland case
+          </Link>
+          <blockquote className="mt-10 max-w-2xl border-l-2 border-brass pl-5 text-[1.05rem] leading-relaxed text-ink-soft">
+            <p>
+              &quot;It&apos;s better to be prepared and know AI properly, so you
+              don&apos;t make a misstep.&quot;
+            </p>
+            <footer className="mt-3 text-sm text-muted">
+              9 person law firm in Denmark, now saving 6 to 7 hours a week
+            </footer>
+          </blockquote>
+          <Link
+            href="/case-studies/denmark-law-firm-6-7-hours"
+            className="mt-6 inline-block text-sm font-semibold text-copper hover:text-copper-hover"
+          >
+            Read the Denmark case
           </Link>
         </div>
       </section>
