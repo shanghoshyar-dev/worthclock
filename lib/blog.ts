@@ -21,6 +21,17 @@ export type BlogPost = {
 
 export const posts: BlogPost[] = [
   {
+    slug: "how-can-a-law-firm-use-ai-to-manage-email-safely",
+    title: "How Can a Law Firm Use AI to Manage Email Safely?",
+    metaTitle: "AI for Law Firm Email: How to Use It Safely | Worthclock",
+    description:
+      "How law firms can use AI to sort, summarise and draft email, what it should never do, the main risks and how to introduce it safely.",
+    date: "2026-11-28",
+    dateModified: "2026-11-28",
+    dateLabel: "28 November 2026",
+    readingMinutes: 6,
+  },
+  {
     slug: "gdpr-legal-ai-when-is-a-dpia-required",
     title: "GDPR and Legal AI: When Is a DPIA Required?",
     metaTitle: "GDPR and Legal AI: When Is a DPIA Required? | Worthclock",
@@ -276,6 +287,11 @@ export function getPost(slug: string) {
 
 /** Related posts for end-of-article reading lists (by current slug). */
 export const relatedBySlug: Record<string, readonly string[]> = {
+  "how-can-a-law-firm-use-ai-to-manage-email-safely": [
+    "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams",
+    "the-ai-your-law-firm-never-chose-how-to-check-built-in-ai-features",
+    "how-many-hours-per-week-does-ai-really-save-a-lawyer",
+  ],
   "gdpr-legal-ai-when-is-a-dpia-required": [
     "is-it-safe-to-use-ai-with-privileged-client-information",
     "can-law-firms-put-client-data-into-microsoft-copilot-outlook-and-teams",

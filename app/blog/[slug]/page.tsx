@@ -18,6 +18,7 @@ import {
   BuiltInAiFeaturesArticle,
   builtInAiFeaturesFaqs,
 } from "@/components/blog/BuiltInAiFeaturesArticle";
+import { AiEmailArticle, aiEmailFaqs } from "@/components/blog/AiEmailArticle";
 import { DpiaArticle, dpiaFaqs } from "@/components/blog/DpiaArticle";
 import {
   AiLiabilityArticle,
@@ -114,6 +115,10 @@ const articles: Record<
   string,
   { faqs: BlogFaq[]; Content: () => ReactNode }
 > = {
+  "how-can-a-law-firm-use-ai-to-manage-email-safely": {
+    faqs: aiEmailFaqs,
+    Content: AiEmailArticle,
+  },
   "gdpr-legal-ai-when-is-a-dpia-required": {
     faqs: dpiaFaqs,
     Content: DpiaArticle,
